@@ -5,198 +5,157 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-Todos los capítulos deben comenzar con un breve párrafo introductorio que indique cuál es el contenido que se encontrará al leerlo.  La redacción sobre el contenido de la memoria debe hacerse en presente y todo lo referido al proyecto en pasado, siempre de modo impersonal.
+En el presente capítulo se brinda una explicación del funcionamiento general del sistema implementado, y una introducción a diferentes tecnologías utilizadas en el trabajo. Se presentan además los requerimientos y la planificación del trabajo.
 
-\section{Estilo y convenciones}
-\label{sec:ejemplo}
+\section{Bluetooth}
 
-\subsection{Uso de mayúscula inicial para los título de secciones}
+La tecnología Bluetooth opera en la banda de frecuencia industrial, científica y médica (ISM) sin licencia de 2.4GHz, admite múltiples opciones de radio que permiten a los desarrolladores desarrollar productos que cumplen con requisitos de conectividad únicos en el mercado. 
 
-Si en el texto se hace alusión a diferentes partes del trabajo referirse a ellas como capítulo, sección o subsección según corresponda. Por ejemplo: ``En el capítulo \ref{Chapter1} se explica tal cosa'', o ``En la sección \ref{sec:ejemplo} se presenta lo que sea'', o ``En la subsección \ref{subsec:ejemplo} se discute otra cosa''.
+Ya sea que un producto transmita audio de alta calidad entre un teléfono inteligente y un altavoz, transfiera datos entre una tableta y un dispositivo médico, o envíe mensajes entre miles de nodos en una aplicación de automatización de edificios, los tecnologías Bluetooth Low Energy (LE) y Basic Rate/Enhanced Data Rate (BR/EDR) están diseñadas para satisfacer las necesidades únicas de los desarrolladores de todo el mundo.
 
-Cuando se quiere poner una lista tabulada, se hace así:
 
-\begin{itemize}
-	\item Este es el primer elemento de la lista.
-	\item Este es el segundo elemento de la lista.
-\end{itemize}
+\subsection{Bluetooth low energy (LE)}
 
-Notar el uso de las mayúsculas y el punto al final de cada elemento.
+La tecnología Bluetooth Low Energy (LE) está diseñada para funcionar con muy baja potencia. Permite un funcionamiento confiable en la banda de frecuencia de 2.4 GHz, aprovecha un sólido enfoque de espectro ensanchado por salto de frecuencia que transmite datos a través de 40 canales.
 
-Si se desea poner una lista numerada el formato es este:
+Esta tecnología, brinda a los desarrolladores una enorme flexibilidad, incluidas múltiples opciones PHY que admiten velocidades de datos de 125 Kb/s a 2 Mb/s, múltiples niveles de potencia, entre 1 mW y 100 mW, así como múltiples opciones de seguridad. 
 
-\begin{enumerate}
-	\item Este es el primer elemento de la lista.
-	\item Este es el segundo elemento de la lista.
-\end{enumerate}
+Bluetooth LE también admite múltiples topologías de red, incluidas redes punto a punto, de broadcast y de malla.
 
-Notar el uso de las mayúsculas y el punto al final de cada elemento.
 
-\subsection{Este es el título de una subsección}
-\label{subsec:ejemplo}
+\subsection{Bluetooth clásico}
 
-Se recomienda no utilizar \textbf{texto en negritas} en ningún párrafo, ni tampoco texto \underline{subrayado}. En cambio sí se debe utilizar \textit{texto en itálicas} para palabras en un idioma extranjero, al menos la primera vez que aparecen en el texto. En el caso de palabras que estamos inventando se deben utilizar ``comillas'', así como también para citas textuales. Por ejemplo, un \textit{digital filter} es una especie de ``selector'' que permite separar ciertos componentes armónicos en particular.
+La tecnología Bluetooth clásica, también conocida como Bluetooth Basic Rate/Enhanced Data Rate (BR/EDR), está diseñada para un funcionamiento de baja potencia y también aprovecha un sólido enfoque de salto de frecuencia adaptable, que transmite datos en 79 canales.
 
-La escritura debe ser impersonal. Por ejemplo, no utilizar ``el diseño del firmware lo hice de acuerdo con tal principio'', sino ``el firmware fue diseñado utilizando tal principio''. 
+Esta tecnología incluye múltiples opciones PHY que admiten velocidades de datos de 1 Mb/s a 3 Mb/s, múltiples niveles de potencia, entre 1 mW y 100 mW, múltiples opciones de seguridad y una topología de red punto a punto.
 
-El trabajo es algo que al momento de escribir la memoria se supone que ya está concluido, entonces todo lo que se refiera a hacer el trabajo se narra en tiempo pasado, porque es algo que ya ocurrió. Por ejemplo, "se diseñó el firmware empleando la técnica de test driven development".
+La tabla \ref{tab:sistemasDeLLamadoEnfermera} muestra una comparación de las principales características de ambas tecnologías bluetooth: LE y BR/EDR $\pi$.
 
-En cambio, la memoria es algo que está vivo cada vez que el lector la lee. Por eso transcurre siempre en tiempo presente, como por ejemplo:
-
-``En el presente capítulo se da una visión global sobre las distintas pruebas realizadas y los resultados obtenidos. Se explica el modo en que fueron llevados a cabo los test unitarios y las pruebas del sistema''.
-
-Se recomienda no utilizar una sección de glosario sino colocar la descripción de las abreviaturas como parte del mismo cuerpo del texto. Por ejemplo, RTOS (\textit{Real Time Operating System}, Sistema Operativo de Tiempo Real) o en caso de considerarlo apropiado mediante notas a pie de página.
-
-Si se desea indicar alguna página web utilizar el siguiente formato de referencias bibliográficas, dónde las referencias se detallan en la sección de bibliografía de la memoria, utilizado el formato establecido por IEEE en \citep{IEEE:citation}. Por ejemplo, ``el presente trabajo se basa en la plataforma EDU-CIAA-NXP \citep{CIAA}, la cual...''.
-
-\subsection{Figuras} 
-
-Al insertar figuras en la memoria se deben considerar determinadas pautas. Para empezar, usar siempre tipografía claramente legible. Luego, tener claro que \textbf{es incorrecto} escribir por ejemplo esto: ``El diseño elegido es un cuadrado, como se ve en la siguiente figura:''
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=.45]{./Figures/cuadradoAzul.png}
-\end{figure}
-
-La forma correcta de utilizar una figura es con referencias cruzadas, por ejemplo: ``Se eligió utilizar un cuadrado azul para el logo, como puede observarse en la figura \ref{fig:cuadradoAzul}''.
-
-\begin{figure}[ht]
+\begin{table}[h]
 	\centering
-	\includegraphics[scale=.45]{./Figures/cuadradoAzul.png}
-	\caption{Ilustración del cuadrado azul que se eligió para el diseño del logo.}
-	\label{fig:cuadradoAzul}
-\end{figure}
+	\caption[Tecnologías Bluetooth]{Comparativa de tecnologías Bluetooth}
+	\begin{tabular}{l c c}    
+		\toprule
+		\textbf{} 	 & \textbf{Bluetooth low energy (LE)} & \textbf{Bluetooth clásico}\\
+		\midrule
+		\begin{tabular}[c]{@{}l@{}}Bandas de \\ frecuencia\end{tabular}          & \begin{tabular}[c]{@{}l@{}}Banda ISM de 2.4GHz \\ (2.402 - 2.480 GHz utilizados)\end{tabular}                                                     & \begin{tabular}[c]{@{}l@{}}Banda ISM de 2.4GHz\\ (2.402 - 2.480 GHz utilizados)\end{tabular}                          \\
+Canales                                                                  & \begin{tabular}[c]{@{}l@{}}40 canales con espaciado de 2 \\ MHz (3 canales publicitarios, \\ 37 canales de datos)\end{tabular}                    & \begin{tabular}[c]{@{}l@{}}79 canales con espaciado de \\ 1 MHz\end{tabular}                                          \\
+\begin{tabular}[c]{@{}l@{}}Uso de los \\ canales\end{tabular}            & \begin{tabular}[c]{@{}l@{}}Espectro ensanchado por \\ salto de frecuencia (FHSS)\end{tabular}                                                     & \begin{tabular}[c]{@{}l@{}}Espectro ensanchado por \\ salto de frecuencia (FHSS)\end{tabular}                         \\
+Modulación                                                               & GFSK                                                                                                                                              & GFSK, $\pi$/4 DQPSK, 8DPSK                                                                                                \\
+\begin{tabular}[c]{@{}l@{}}Consumo de\\ energía\end{tabular}             & \begin{tabular}[c]{@{}l@{}}$\sim$0.01x 0.5x de referencia\\ (dependiendo del caso de uso)\end{tabular}                                            & 1 (valor de referencia)                                                                                               \\
+\begin{tabular}[c]{@{}l@{}}Velocidad de\\ datos\end{tabular}             & \begin{tabular}[c]{@{}l@{}}LE 2M PHY: 2 Mb/s\\ LE 1M PHY: 1 Mb/s\\ LE Coded PHY (S=2): 500 Kb/s\\ LE Coded PHY (S=8): 125 Kb/s\end{tabular}       & \begin{tabular}[c]{@{}l@{}}EDR PHY (8DPSK): 3 Mb/s\\ EDR PHY ($\pi$/4 DQPSK): 2 Mb/s\\ BR PHY (GFSK): 1 Mb/s\end{tabular} \\
+\begin{tabular}[c]{@{}l@{}}Potencia máxima\\ de Transmision\end{tabular} & \begin{tabular}[c]{@{}l@{}}Clase 1: 100 mW (+20 dBm)\\ Clase 1.5: 10 mW (+10 dbm)\\ Clase 2: 2.5 mW (+4 dBm)\\ Clase 3: 1 mW (0 dBm)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Clase 1: 100 mW (+20 dBm)\\ Clase 2: 2.5 mW (+4 dBm)\\ Clase 3: 1 mW (0 dBm)\end{tabular}  \\
+\begin{tabular}[c]{@{}l@{}}Topologias\\ de red\end{tabular}              & \begin{tabular}[c]{@{}l@{}}Punto a punto (incluida piconet)\\ Transmisión\\ Malla\end{tabular}                                                    & Punto a punto (incluida piconet)\\
+		\bottomrule
+		\hline
+	\end{tabular}
+	\label{tab:sistemasDeLLamadoEnfermera}
+\end{table}
 
-El texto de las figuras debe estar siempre en español, excepto que se decida reproducir una figura original tomada de alguna referencia. En ese caso la referencia de la cual se tomó la figura debe ser indicada en el epígrafe de la figura e incluida como una nota al pie, como se ilustra en la figura \ref{fig:palabraIngles}.
+%----------------------------------------------------------------------------------------
+
+\section{Sistema Propuesto}
+
+La figura \ref{fig:DiagramaBloques} muestra un diagrama de bloques del sistema propuesto donde se puede apreciar que es completamente inalámbrico, ya que el dispositivo llamador se conecta a la terminal de sala a través de bluetooth, esto permitirá eliminar la limitación de ésta para recibir solo dos dispositivos llamadores, además de eliminar los riesgos asociados al cableado, tambien lo hace más cómodo y versátil, pues el paciente podrá llevarlo con él a donde se que vaya y lo podrá utilizar sin estar necesariamente en la cama, por ejemplo si necesita ir al baño y estando ahí requiere ayuda, no necesita volver a la cama para solicitar atención.
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.3]{./Figures/word.jpeg}
-	\caption{Imagen tomada de la página oficial del procesador\protect\footnotemark.}
-	\label{fig:palabraIngles}
+	\includegraphics[scale=0.5]{./Figures/DiagramaDeBloques.png}
+	\caption{Diagrama en bloques del sistema propuesto}
+	\label{fig:DiagramaBloques}
 \end{figure}
 
-\footnotetext{Imagen tomada de \url{https://goo.gl/images/i7C70w}}
+El sistema desarrollado agrega la electrónica tanto del lado del llamador como del lado de la terminal, cuyo dispositivo bluetooth acepta varios llamadores bluetooth, que le envían novedades. La terminal de sala  a su vez redirecciona las novedades de cada paciente a la terminal de llamada.
 
-La figura y el epígrafe deben conformar una unidad cuyo significado principal pueda ser comprendido por el lector sin necesidad de leer el cuerpo central de la memoria. Para eso es necesario que el epígrafe sea todo lo detallado que corresponda y si en la figura se utilizan abreviaturas entonces aclarar su significado en el epígrafe o en la misma figura.
+La terminal de llamada como ya hacía el anterior sistema notifica vía ethernet a la enfermera, y en caso necesario establecerá una llamada entre el paciente y la enfermera.
 
+El nuevo sistema cambia la ubicación del micrófono al dispositivo llamador, de manera que ahora estará más cerca del paciente, manteniendo el parlante en la terminal de sala, mejorando así la comunicación.
 
+El microfono seleccionado utiliza la interfaz de audio digital PDM, que es compatible con el procesador elegido dispone de un periférico para controlar micrófonos con este tipo de interfaz.
 
-\begin{figure}[ht]
+La comunicación entre el dispositivo Bluetooth y la terminal de llamada se realiza a  través de una interfaz UART, que está disponible en los puertos de accesorios de la terminal de llamada del sistema anterior.
+
+En este sistema el audio se transmite codificado en PCMU, para mantener compatibilidad con el anterior sistema.
+
+%----------------------------------------------------------------------------------------
+
+\section{Requerimientos}
+
+Los requerimientos del nuevo sistema de llamado a enfermera son:
+
+\begin{enumerate}
+
+\item Al pulsar uno de los botones del dispositivo llamador, la terminal de sala deberá iniciar una llamada con una terminal de enfermería.
+
+\item Una vez que la terminal de enfermería conteste a la llamada de la terminal de sala, o cuando la terminal de enfermería realice una solicitud de iniciar una llamada, la terminal de sala indicará al dispositivo llamador, que corresponda, encender su micrófono e iniciar el envío de la señal de audio.
+
+\item Cada dispositivo llamador debe poder identificarse con un ID único de manera que pueda ser registrado en una terminal de sala.
+
+\item La terminal de sala deberá registrar los IDs de los llamadores correspondientes a las camas que tenga en el cuarto, y no deberá aceptar conexiones de otros llamadores.
+
+\item La transmisión de audio debe realizarse por Bluetooth LE.
+
+\item La transmisión de audio debe realizarse utilizando el codec g711 ulaw empleado por en el software actual.
+
+\item El dispositivo llamador debe permanecer en modo de bajo consumo mientras no esté en una llamada, o el paciente presione un botón.
+
+\item La terminal de sala además de sus tareas habituales debe estar a la escucha de los mensajes de los dispositivos llamadores que tenga registrados.
+
+\item Al requerimiento de la terminal de enfermería, la terminal de sala debe poder determinar a qué dispositivo llamador dirigir la solicitud.
+
+\item El software debe permitir modificar sus parámetros operativos y almacenarlos en memoria segura.
+
+\item El software no debe alterar las condiciones de operación actuales  del sistema.
+
+\item Se deberá diseñar dos placas eléctricas, una para el modulo de expansión a conectarse a la terminal de sala, y otra para el dispositivo llamador.
+
+\end{enumerate}
+
+Los requerimientos del  modulo de expansión para la terminal son:
+
+\begin{enumerate}
+
+\item Conectar de 1 a 3 dispositivos llamadores.
+
+\item Notificar a la terminal de sala las solicitudes del paciente para que inicie una llamada con la terminal de enfermería.
+
+\item Notificar a la terminal de sala cuando un dispositivo llamador se encuentre con baja batería.
+
+\item Al estar en llamada, el módulo de expansión deberá ignorar las peticiones de otros llamadores y solo retransmitir la señal de audio a la terminal de sala.
+
+\end{enumerate}
+
+Los requerimientos del dispositivo llamador son:
+
+\begin{enumerate}
+
+\item Medir el nivel de batería del dispositivo y notificar al módulo de expansión de la terminal de sala al que se encuentre conectado.
+
+\item Notificar a la terminal de sala sobre las solicitudes del paciente según el botón presionado.
+
+\item Leer señal de audio y transmitirla a la terminal de sala cuando se encuentre en llamada.
+
+\end{enumerate}
+
+\section{Planificación}
+
+En la figura \ref{fig:ActivityOnNode} se presenta la planificación inicial aprobada para el desarrollo del presente proyecto donde se aprecia camino crítico para su ejecución, habiéndose estimado un total de 615 horas de trabajo.
+
+\begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.37]{./Figures/questionMark.png}
-	\caption{¿Por qué de pronto aparece esta figura?}
-	\label{fig:questionMark}
+	\includegraphics[scale=0.4]{./Figures/ActivityOnNode.jpg}
+	\caption{Diagrama activity on node del trabajo}
+	\label{fig:ActivityOnNode}
 \end{figure}
 
-Nunca colocar una figura en el documento antes de hacer la primera referencia a ella, como se ilustra con la figura \ref{fig:questionMark}, porque sino el lector no comprenderá por qué de pronto aparece la figura en el documento, lo que distraerá su atención.
+Sin embargo, esta planificación inicial no se ha podido cumplir debido a que algunos supuestos del proyecto no se cumplieron, entre los que citamos:
 
-Otra posibilidad es utilizar el entorno \textit{subfigure} para incluir más de una figura, como se puede ver en la figura \ref{fig:three graphs}. Notar que se pueden referenciar también las figuras internas individualmente de esta manera: \ref{fig:1de3}, \ref{fig:2de3} y \ref{fig:3de3}.
- 
-\begin{figure}[!htpb]
-     \centering
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=.65\textwidth]{./Figures/questionMark}
-         \caption{Un caption.}
-         \label{fig:1de3}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=.65\textwidth]{./Figures/questionMark}
-         \caption{Otro.}
-         \label{fig:2de3}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=.65\textwidth]{./Figures/questionMark}
-         \caption{Y otro más.}
-         \label{fig:3de3}
-     \end{subfigure}
-        \caption{Tres gráficos simples}
-        \label{fig:three graphs}
-\end{figure}
+\begin{itemize}
 
-El código para generar las imágenes se encuentra disponible para su reutilización en el archivo \file{Chapter2.tex}.
+\item El tiempo requerido para el desarrollo del software resultó mayor al previsto. Además de ello, se tuvo un retraso en el inicio de esta actividad ya que debido a la cuarentena que se decretó de un momento a otro, no se dispuso oportunamente del material necesario para desarrollar el proyecto.
 
-\subsection{Tablas}
+\item Hubo dificultad al conseguir algunos componentes electrónicos necesarios, particularmente, el micrófono para poder hacer pruebas durante el desarrollo.
 
-Para las tablas utilizar el mismo formato que para las figuras, sólo que el epígrafe se debe colocar arriba de la tabla, como se ilustra en la tabla \ref{tab:peces}. Observar que sólo algunas filas van con líneas visibles y notar el uso de las negritas para los encabezados.  La referencia se logra utilizando el comando \verb|\ref{<label>}| donde label debe estar definida dentro del entorno de la tabla.
+\item El tiempo requerido para el desarrollo del hardware resultó mayor al previsto. La empresa cuenta con un fabricante de placas de su confianza, el mismo que se encuentra en la China, motivo por el cual debido a la coyuntura originada en la pandemia por la aparición del COVID-19, que aqueja al planeta, se han tenido dificultades en la comunicación y transporte.
 
-\begin{verbatim}
-\begin{table}[h]
-	\centering
-	\caption[caption corto]{caption largo más descriptivo}
-	\begin{tabular}{l c c}    
-		\toprule
-		\textbf{Especie}     & \textbf{Tamaño} & \textbf{Valor}\\
-		\midrule
-		Amphiprion Ocellaris & 10 cm           & \$ 6.000 \\		
-		Hepatus Blue Tang    & 15 cm           & \$ 7.000 \\
-		Zebrasoma Xanthurus  & 12 cm           & \$ 6.800 \\
-		\bottomrule
-		\hline
-	\end{tabular}
-	\label{tab:peces}
-\end{table}
-\end{verbatim}
-
-
-\begin{table}[h]
-	\centering
-	\caption[caption corto]{caption largo más descriptivo}
-	\begin{tabular}{l c c}    
-		\toprule
-		\textbf{Especie} 	 & \textbf{Tamaño} 		& \textbf{Valor}  \\
-		\midrule
-		Amphiprion Ocellaris & 10 cm 				& \$ 6.000 \\		
-		Hepatus Blue Tang	 & 15 cm				& \$ 7.000 \\
-		Zebrasoma Xanthurus	 & 12 cm				& \$ 6.800 \\
-		\bottomrule
-		\hline
-	\end{tabular}
-	\label{tab:peces}
-\end{table}
-
-En cada capítulo se debe reiniciar el número de conteo de las figuras y las tablas, por ejemplo, figura 2.1 o tabla 2.1, pero no se debe reiniciar el conteo en cada sección. Por suerte la plantilla se encarga de esto por nosotros.
-
-\subsection{Ecuaciones}
-\label{sec:Ecuaciones}
-
-Al insertar ecuaciones en la memoria dentro de un entorno \textit{equation}, éstas se numeran en forma automática  y se pueden referir al igual que como se hace con las figuras y tablas, por ejemplo ver la ecuación \ref{eq:metric}.
-
-\begin{equation}
-	\label{eq:metric}
-	ds^2 = c^2 dt^2 \left( \frac{d\sigma^2}{1-k\sigma^2} + \sigma^2\left[ d\theta^2 + \sin^2\theta d\phi^2 \right] \right)
-\end{equation}
-                                                        
-Es importante tener presente que si bien las ecuaciones pueden ser referidas por su número, también es correcto utilizar los dos puntos, como por ejemplo ``la expresión matemática que describe este comportamiento es la siguiente:''
-
-\begin{equation}
-	\label{eq:schrodinger}
-	\frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi = -i\hbar \frac{\partial\Psi}{\partial t}
-\end{equation}
-
-Para generar la ecuación \ref{eq:metric} se utilizó el siguiente código:
-
-\begin{verbatim}
-\begin{equation}
-	\label{eq:metric}
-	ds^2 = c^2 dt^2 \left( \frac{d\sigma^2}{1-k\sigma^2} + 
-	\sigma^2\left[ d\theta^2 + 
-	\sin^2\theta d\phi^2 \right] \right)
-\end{equation}
-\end{verbatim}
-
-Y para la ecuación \ref{eq:schrodinger}:
-
-\begin{verbatim}
-\begin{equation}
-	\label{eq:schrodinger}
-	\frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi = 
-	-i\hbar \frac{\partial\Psi}{\partial t}
-\end{equation}
-
-\end{verbatim}
+\end{itemize}
