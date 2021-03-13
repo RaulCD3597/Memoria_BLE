@@ -1,5 +1,7 @@
 \chapter{Diseño e implementación} % Main chapter title
 
+\label{Chapter3}
+
 En este capítulo se describe el diseño e implementación de los diferentes módulos de software y hardware del sistema, como así también las diferentes herramientas utilizadas.
 
 El sistema propuesto reemplazará al sistema actual de SURIX, el mismo que es un llamador cableado que se conecta en uno de los puertos de accesorio que tiene el terminal de sala, y donde tanto el micrófono como el parlante se encuentra ubicado en dicho terminal.
@@ -33,25 +35,25 @@ Los principales componentes de esta placa son:
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.4]{./Figures/ActivityOnNode.jpg}
-	\caption{Diagrama activity on node del trabajo}
+	\includegraphics[scale=0.15]{./Figures/MDBT42Q.jpg}
+	\caption{Modulo MDBT42Q-512KV2}
 	\label{fig:MDBT42}
 \end{figure}
 
 \begin{table}[h]
 	\centering
-	\caption[Sistemas de llamado a enfermera]{Tabla comparativa de los sistemas de llamado a enfermera disponibles en el mercado}
-	\begin{tabular}{l c c c c}    
+	\caption[Características modulo MDBT42Q-512KV2]{Tabla de características modulo MDBT42Q-512KV2}
+	\begin{tabular}{l c}    
 		\toprule
-		\textbf{Característica} 	 & \textbf{SURIX} & \textbf{MMCALL} & \textbf{Helpnex} & \textbf{SEI}\\
+		\textbf{Característica} 	 & \textbf{Valor}\\
 		\midrule
-		Dispositivo llamador inalámbrico 				&  	&  	&  	& X \\
-		Central de enfermera inalámbrica 				&  	& X & X & X \\
-		Aviso de presencia de\\enfermera por RFID 		& X	&  	& X	&   \\
-		Sistema de localización de pacientes 			&  	&  	& X	&   \\
-		Panel de control 								& X	& X	& X	& X \\
-		Alarma de pasillo configurable	 				& X	& X	& X	&   \\
-		Emisión de informes				 				& X	& X	& X	&   \\
+		Tamano (mm)                                                        & 8.8 x 13.8 x 1.8       \\
+\begin{tabular}[c]{@{}l@{}}Especificacion\\ Bluetooth\end{tabular} & BT50.1 / BT5.0 / BT4.2 \\
+Antena                                                             & Incluida en el modulo  \\
+\begin{tabular}[c]{@{}l@{}}Longitud de\\ cobertura\end{tabular}    & \textgreater 80 m      \\
+RAM                                                                & 64 Kbytes              \\
+Flash                                                              & 512 Kbytes             \\
+Pines GPIO                                                         & 32						\\
 		\bottomrule
 		\hline
 	\end{tabular}
@@ -60,25 +62,21 @@ Los principales componentes de esta placa son:
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.4]{./Figures/ActivityOnNode.jpg}
-	\caption{Diagrama activity on node del trabajo}
+	\includegraphics[scale=0.3]{./Figures/mic.png}
+	\caption{Micrófono SDM0401-RS261-G04}
 	\label{fig:mic}
 \end{figure}
 
 \begin{table}[h]
 	\centering
-	\caption[Sistemas de llamado a enfermera]{Tabla comparativa de los sistemas de llamado a enfermera disponibles en el mercado}
-	\begin{tabular}{l c c c c}    
+	\caption[Características micrófono SDM0401-RS261-G04]{Tabla de características micrófono SDM0401-RS261-G04}
+	\begin{tabular}{l c}    
 		\toprule
-		\textbf{Característica} 	 & \textbf{SURIX} & \textbf{MMCALL} & \textbf{Helpnex} & \textbf{SEI}\\
+		\textbf{Característica} 	 & \textbf{Valor}\\
 		\midrule
-		Dispositivo llamador inalámbrico 				&  	&  	&  	& X \\
-		Central de enfermera inalámbrica 				&  	& X & X & X \\
-		Aviso de presencia de\\enfermera por RFID 		& X	&  	& X	&   \\
-		Sistema de localización de pacientes 			&  	&  	& X	&   \\
-		Panel de control 								& X	& X	& X	& X \\
-		Alarma de pasillo configurable	 				& X	& X	& X	&   \\
-		Emisión de informes				 				& X	& X	& X	&   \\
+		\begin{tabular}[c]{@{}l@{}}Voltaje de\\ alimentacion\end{tabular} & 1.8 V            \\
+\begin{tabular}[c]{@{}l@{}}Frecuencia de\\ reloj\end{tabular}     & 2.4 MHz          \\
+Directividad                                                      & Omni-Direccional \\
 		\bottomrule
 		\hline
 	\end{tabular}
@@ -89,21 +87,30 @@ Con estos componentes se diseño un diagrama esquemático, a partir del cual se 
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.4]{./Figures/ActivityOnNode.jpg}
-	\caption{Diagrama activity on node del trabajo}
+	\includegraphics[scale=0.6]{./Figures/esquematico.jpeg}
+	\caption{Diagrama esquemático para placas Bluetooth}
 	\label{fig:esquematico}
+\end{figure}
+
+A partir de este de diagrama se diseñó la placa del dispositivo llamador, que se muestra a en la figura \ref{fig:pcb}.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.4]{./Figures/placas.jpeg}
+	\caption{Placa dispositivo llamador}
+	\label{fig:pcb}
 \end{figure}
 
 La fabricación de esta placa se ha encargado a una empresa China de confianza de SURIX, motivo por el cual este proceso se retrasó y no es posible mostrarla físicamente.
 
 Para que el circuito pueda ser utilizado tanto en el llamador como del lado de la terminal de llamada se ha previsto que el circuito pueda ser alimentado, por la terminal de sala de SURIX en la terminal de llamada, o por 2 baterías tipo AAA en el dispositivo llamador, estas últimas se escogieron debido principalmente a la facilidad de adquirirlas en el mercado y su relativamente bajo costo.
 
-La placa del dispositivo llamador se aloja dentro de un gabinete plástico, el cual se muestra en la figura \ref{fig:gabinete}.
+La placa del dispositivo llamador se aloja dentro de un gabinete plástico, el cual se muestra en la figura \ref{fig:gabinete}, sin embargo este se modificara segun las necesidades de SURIX.
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.4]{./Figures/ActivityOnNode.jpg}
-	\caption{Diagrama activity on node del trabajo}
+	\includegraphics[scale=0.25]{./Figures/gabinete.jpeg}
+	\caption{Prototipo gabinete del dispositivo llamador}
 	\label{fig:gabinete}
 \end{figure}
 
@@ -138,8 +145,8 @@ Para el desarrollo de este firmware se realizó un diagrama de bloques que descr
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.4]{./Figures/ActivityOnNode.jpg}
-	\caption{Diagrama activity on node del trabajo}
+	\includegraphics[scale=0.8]{./Figures/DCaller.jpeg}
+	\caption{Diagrama de bloques del software del llamador}
 	\label{fig:DiagramaSoftLlam}
 \end{figure}
 
@@ -168,8 +175,8 @@ Para el desarrollo de este firmware se realizó un diagrama de flujo que describ
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.4]{./Figures/ActivityOnNode.jpg}
-	\caption{Diagrama activity on node del trabajo}
+	\includegraphics[scale=0.8]{./Figures/Dcentral.jpeg}
+	\caption{Diagrama de bloques software central receptora}
 	\label{fig:DiagramaSoftCentral}
 \end{figure}
 
@@ -206,8 +213,8 @@ El comportamiento general de este módulo se observa en el diagrama de flujo dis
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.4]{./Figures/ActivityOnNode.jpg}
-	\caption{Diagrama activity on node del trabajo}
+	\includegraphics[scale=0.8]{./Figures/Dcontrol.jpeg}
+	\caption{Diagrama de bloques software de control de la placa de expansión}
 	\label{fig:DiagramaSoftControl}
 \end{figure}
 
