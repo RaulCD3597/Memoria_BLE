@@ -29,6 +29,8 @@ La tecnología Bluetooth clásica, también conocida como Bluetooth Basic Rate/E
 
 Esta tecnología incluye múltiples opciones en la capa física (PHY) que admiten velocidades de datos de 1 Mb/s a 3 Mb/s, múltiples niveles de potencia, entre 1 mW y 100 mW, múltiples opciones de seguridad y una topología de red punto a punto \cite{bluetooth}.
 
+\subsection{Comparación de tecnologías Bluetooth}
+
 La tabla \ref{tab:Bluetooth} muestra una comparación de las principales características de ambas tecnologías Bluetooth: LE y BR/EDR.
 
 \begin{table}[h]
@@ -68,14 +70,6 @@ La figura \ref{fig:DiagramaBloques} muestra un diagrama de bloques del sistema p
 El sistema que se desarrolla en este trabajo agrega la electrónica tanto del lado del llamador como del lado de la terminal, cuyo dispositivo Bluetooth acepta varios llamadores Bluetooth, que le envían novedades. La terminal de sala  a su vez redirecciona las novedades de cada paciente a la terminal de llamada.
 
 El terminal de llamada, como ya hacía el anterior sistema, notifica vía Ethernet a la enfermera, y en caso de ser necesario establece una llamada entre el paciente y la enfermera.
-
-El nuevo sistema cambia la ubicación del micrófono al dispositivo llamador, de manera que ahora esta más cerca del paciente. De esta forma se mantiene el parlante en la terminal de sala, mejorando así la comunicación.
-
-El microfono seleccionado utiliza la interfaz de audio digital PDM, que es compatible con el procesador elegido dispone de un periférico para controlar micrófonos con este tipo de interfaz.
-
-La comunicación entre el dispositivo Bluetooth y la terminal de llamada se realiza a  través de una interfaz UART, que está disponible en los puertos de accesorios de la terminal de llamada del sistema anterior.
-
-En este sistema el audio se transmite codificado en PCMU, para mantener compatibilidad con el anterior sistema.
 
 %----------------------------------------------------------------------------------------
 
