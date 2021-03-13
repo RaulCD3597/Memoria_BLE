@@ -5,20 +5,20 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-En el presente capítulo se brinda una explicación del funcionamiento general del sistema implementado, y una introducción a diferentes tecnologías utilizadas en el trabajo. Se presentan además los requerimientos y la planificación del trabajo.
+En el presente capítulo se brinda una introducción a diferentes tecnologías utilizadas en el trabajo y una explicación del funcionamiento general del sistema implementado. Se presentan además los requerimientos y la planificación del trabajo.
 
 \section{Bluetooth}
 
-La tecnología Bluetooth opera en la banda de frecuencia industrial, científica y médica (ISM) sin licencia de 2.4GHz, admite múltiples opciones de radio que permiten a los desarrolladores desarrollar productos que cumplen con requisitos de conectividad únicos en el mercado. 
+La tecnología Bluetooth opera en la banda de frecuencia industrial, científica y médica (ISM) sin licencia de 2.4GHz. Admite múltiples opciones de radio que permiten a los desarrolladores desarrollar productos que cumplen con requisitos de conectividad específicos de cada aplicación. 
 
-Ya sea que un producto transmita audio de alta calidad entre un teléfono inteligente y un altavoz, transfiera datos entre una tableta y un dispositivo médico, o envíe mensajes entre miles de nodos en una aplicación de automatización de edificios, los tecnologías Bluetooth Low Energy (LE) y Basic Rate/Enhanced Data Rate (BR/EDR) están diseñadas para satisfacer las necesidades únicas de los desarrolladores de todo el mundo \cite{bluetooth}.
+Ya sea que un producto transmita audio de alta calidad entre un teléfono inteligente y un altavoz, transfiera datos entre una tableta y un dispositivo médico, o envíe mensajes entre miles de nodos en una aplicación de automatización de edificios, los tecnologías Bluetooth Low Energy (LE) y Basic Rate/Enhanced Data Rate (BR/EDR) están diseñadas para satisfacer las distintas necesidades de los desarrolladores de todo el mundo \cite{bluetooth}.
 
 
-\subsection{Bluetooth low energy (LE)}
+\subsection{Bluetooth Low Energy (LE)}
 
-La tecnología Bluetooth Low Energy (LE) está diseñada para funcionar con muy baja potencia. Permite un funcionamiento confiable en la banda de frecuencia de 2.4 GHz, aprovecha un sólido enfoque de espectro ensanchado por salto de frecuencia que transmite datos a través de 40 canales \cite{bluetooth}.
+La tecnología Bluetooth Low Energy (LE) está diseñada para funcionar con muy baja potencia. Permite un funcionamiento confiable en la banda de frecuencia de 2.4 GHz, ya que aprovecha un sólido enfoque de espectro ensanchado por salto de frecuencia que transmite datos a través de 40 canales \cite{bluetooth}.
 
-Esta tecnología, brinda a los desarrolladores una enorme flexibilidad, incluidas múltiples opciones PHY que admiten velocidades de datos de 125 Kb/s a 2 Mb/s, múltiples niveles de potencia, entre 1 mW y 100 mW, así como múltiples opciones de seguridad \cite{bluetooth}. 
+Esta tecnología, brinda a los desarrolladores una enorme flexibilidad, incluidas múltiples opciones en la capa física (PHY) que admiten velocidades de datos de 125 Kb/s a 2 Mb/s, múltiples niveles de potencia, entre 1 mW y 100 mW, así como múltiples opciones de seguridad \cite{bluetooth}. 
 
 Bluetooth LE también admite múltiples topologías de red, incluidas redes punto a punto, de broadcast y de malla.
 
@@ -27,9 +27,9 @@ Bluetooth LE también admite múltiples topologías de red, incluidas redes punt
 
 La tecnología Bluetooth clásica, también conocida como Bluetooth Basic Rate/Enhanced Data Rate (BR/EDR), está diseñada para un funcionamiento de baja potencia y también aprovecha un sólido enfoque de salto de frecuencia adaptable, que transmite datos en 79 canales \cite{bluetooth}.
 
-Esta tecnología incluye múltiples opciones PHY que admiten velocidades de datos de 1 Mb/s a 3 Mb/s, múltiples niveles de potencia, entre 1 mW y 100 mW, múltiples opciones de seguridad y una topología de red punto a punto \cite{bluetooth}.
+Esta tecnología incluye múltiples opciones en la capa física (PHY) que admiten velocidades de datos de 1 Mb/s a 3 Mb/s, múltiples niveles de potencia, entre 1 mW y 100 mW, múltiples opciones de seguridad y una topología de red punto a punto \cite{bluetooth}.
 
-La tabla \ref{tab:Bluetooth} muestra una comparación de las principales características de ambas tecnologías Bluetooth: LE y BR/EDR $\pi$.
+La tabla \ref{tab:Bluetooth} muestra una comparación de las principales características de ambas tecnologías Bluetooth: LE y BR/EDR.
 
 \begin{table}[h]
 	\centering
@@ -54,9 +54,9 @@ Modulación                                                               & GFSK
 
 %----------------------------------------------------------------------------------------
 
-\section{Sistema Propuesto}
+\section{Sistema propuesto}
 
-La figura \ref{fig:DiagramaBloques} muestra un diagrama de bloques del sistema propuesto donde se puede apreciar que es completamente inalámbrico, ya que el dispositivo llamador se conecta a la terminal de sala a través de bluetooth, esto permitirá eliminar la limitación de ésta para recibir solo dos dispositivos llamadores, además de eliminar los riesgos asociados al cableado, tambien lo hace más cómodo y versátil, pues el paciente podrá llevarlo con él a donde sea que vaya y lo podrá utilizar sin estar necesariamente en la cama, por ejemplo si necesita ir al baño y estando ahí requiere ayuda, no necesita volver a la cama para solicitar atención.
+La figura \ref{fig:DiagramaBloques} muestra un diagrama de bloques del sistema propuesto donde se puede apreciar que es completamente inalámbrico, ya que el dispositivo llamador se conecta a la terminal de sala a través de Bluetooth. Esto Permite eliminar la limitación de conectar solo dos dispositivos llamadores, además de eliminar los riesgos asociados al cableado. También lo hace más cómodo y versátil, pues el paciente podrá llevarlo con él a donde sea que vaya y lo podrá utilizar sin estar necesariamente en la cama. Por ejemplo si necesita ir al baño y estando ahí requiere ayuda, no necesita volver a la cama para solicitar atención.
 
 \begin{figure}[htpb]
 	\centering
@@ -65,11 +65,11 @@ La figura \ref{fig:DiagramaBloques} muestra un diagrama de bloques del sistema p
 	\label{fig:DiagramaBloques}
 \end{figure}
 
-El sistema desarrollado agrega la electrónica tanto del lado del llamador como del lado de la terminal, cuyo dispositivo bluetooth acepta varios llamadores bluetooth, que le envían novedades. La terminal de sala  a su vez redirecciona las novedades de cada paciente a la terminal de llamada.
+El sistema que se desarrolla en este trabajo agrega la electrónica tanto del lado del llamador como del lado de la terminal, cuyo dispositivo Bluetooth acepta varios llamadores Bluetooth, que le envían novedades. La terminal de sala  a su vez redirecciona las novedades de cada paciente a la terminal de llamada.
 
-La terminal de llamada como ya hacía el anterior sistema notifica vía ethernet a la enfermera, y en caso necesario establece una llamada entre el paciente y la enfermera.
+El terminal de llamada, como ya hacía el anterior sistema, notifica vía Ethernet a la enfermera, y en caso de ser necesario establece una llamada entre el paciente y la enfermera.
 
-El nuevo sistema cambia la ubicación del micrófono al dispositivo llamador, de manera que ahora esta más cerca del paciente, manteniendo el parlante en la terminal de sala, mejorando así la comunicación.
+El nuevo sistema cambia la ubicación del micrófono al dispositivo llamador, de manera que ahora esta más cerca del paciente. De esta forma se mantiene el parlante en la terminal de sala, mejorando así la comunicación.
 
 El microfono seleccionado utiliza la interfaz de audio digital PDM, que es compatible con el procesador elegido dispone de un periférico para controlar micrófonos con este tipo de interfaz.
 
@@ -107,7 +107,7 @@ Los requerimientos del nuevo sistema de llamado a enfermera son:
 
 \item El software no debe alterar las condiciones de operación actuales  del sistema.
 
-\item Se deberá diseñar dos placas eléctricas, una para el modulo de expansión a conectarse a la terminal de sala, y otra para el dispositivo llamador.
+\item Se deberá diseñar dos placas eléctricas, una para el módulo de expansión a conectarse a la terminal de sala, y otra para el dispositivo llamador.
 
 \end{enumerate}
 
@@ -148,7 +148,7 @@ En la figura \ref{fig:ActivityOnNode} se presenta la planificación inicial apro
 	\label{fig:ActivityOnNode}
 \end{figure}
 
-Sin embargo, esta planificación inicial no se ha podido cumplir debido a que algunos supuestos del proyecto no se cumplieron, entre los que citamos:
+Esta planificación inicial no se cumplió de acuerdo a lo previsto debido a que algunos supuestos del proyecto no se cumplieron, entre los que citamos:
 
 \begin{itemize}
 
@@ -156,6 +156,8 @@ Sin embargo, esta planificación inicial no se ha podido cumplir debido a que al
 
 \item Hubo dificultad al conseguir algunos componentes electrónicos necesarios, particularmente, el micrófono para poder hacer pruebas durante el desarrollo.
 
-\item El tiempo requerido para el desarrollo del hardware resultó mayor al previsto. La empresa cuenta con un fabricante de placas de su confianza, el mismo que se encuentra en la China, motivo por el cual debido a la coyuntura originada en la pandemia por la aparición del COVID-19, que aqueja al planeta, se han tenido dificultades en la comunicación y transporte.
+\item El tiempo requerido para el desarrollo del hardware resultó mayor al previsto. La empresa cuenta con un fabricante de placas de su confianza, el mismo que se encuentra en la China, motivo por el cual debido a la coyuntura originada en la pandemia por la aparición del COVID-19 se han tenido dificultades en la comunicación y transporte.
 
 \end{itemize}
+
+No obstante, si bien los plazos fueron más largos de lo previsto, el trabajo pudo realizarse en forma exitosa, como se muestra en los siguientes capítulos.

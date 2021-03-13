@@ -4,7 +4,7 @@
 
 \label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 
-En este capítulo se describe el contexto actual del cual parte el trabajo, el estado del arte de los sistemas de llamado a enfermera, se presentan los objetivos y alcance del trabajo y se expone su justificación.
+En este capítulo se describe el contexto actual del cual parte el trabajo y el estado del arte de los sistemas de llamado a enfermera. Además se presentan los objetivos, el alcance del trabajo y se expone su justificación
 
 \label{IntroGeneral}
 
@@ -25,37 +25,37 @@ En este capítulo se describe el contexto actual del cual parte el trabajo, el e
 %----------------------------------------------------------------------------------------
 \section{Antecedentes y análisis de contexto}
 
-SURIX es una empresa argentina fundada en 1998, que se dedica al desarrollo de sistemas de control de acceso basados en tecnología IP. Actualmente ofrece líneas de productos para el hogar y edificios, aplicaciones tecnológicas personalizadas para corporaciones, industrias, hospitales, centros comerciales, autopistas y entes gubernamentales, productos que exporta a más de 14 países para diversas aplicaciones, por lo que tiene oficinas en Israel y México \cite{surix}.
+SURIX es una empresa argentina fundada en 1998, que se dedica al desarrollo de sistemas de control de acceso basados en tecnología IP. Actualmente ofrece líneas de productos para el hogar y edificios, aplicaciones tecnológicas personalizadas para corporaciones, industrias, hospitales, centros comerciales, autopistas y entes gubernamentales. Productos que exporta a más de 14 países para diversas aplicaciones, por lo que tiene oficinas en Israel y México \cite{surix}.
 
-Entre los productos ofertados por SURIX, se destaca el sistema de llamado a enfermera, este consta de un dispositivo llamador, que se conecta por cable a una central de sala, y ésta a su vez se conecta a través de una red a la terminal de enfermería \cite{helpip}.
+Entre los productos ofertados por SURIX, se destaca el sistema de llamado a enfermera. Este consta de un dispositivo llamador, que se conecta por cable a un terminal de sala. Esta a su vez se conecta a través de una red con el terminal de enfermería \cite{helpip}.
 
-Desde el dispositivo llamador, el paciente puede encender la luz de lectura o –lo que es más relevante– requerir la atención del personal de servicio a la habitación. En caso de necesitar atención, la central de sala iniciará una llamada VoIP a la terminal de enfermería.
+Desde el dispositivo llamador, el paciente puede encender la luz de lectura o –lo que es más relevante– requerir la atención del personal de servicio a la habitación. En caso de necesitar atención, el terminal de sala iniciará una llamada VoIP con el terminal de enfermería.
 
-El sistema diferencia el llamado desde cama, baño o botón de paro cardíaco, y si fue atendido por enfermería remotamente o está en presencia de enfermera, y también cuando concluye el servicio.
+El sistema diferencia un llamado para servicio a la habitacion, asistencia en el baño o asistencia en caso paro cardíaco, y si fue atendido por enfermería remotamente o se está en presencia de la enfermera. También cuando concluye el servicio.
 
 Además permite visibilizar la solicitud y tipo de solicitud, desde pasillo por medio de una luminaria, que se puede configurar para iluminarse de diversos colores o encenderse intermitentemente en función del tipo de solicitud del paciente.
 
-En la terminal de enfermería se dispone de un panel donde se puede visualizar el estado de cada cama, y la terminal de sala actualmente sólo puede conectarse a dos dispositivos llamadores.
+En la terminal de enfermería se dispone de un panel donde se puede visualizar el estado de cada cama, y el terminal de sala actualmente sólo puede conectarse a dos dispositivos llamadores.
 
 En el mercado existen varias soluciones similares a la que se desea desarrollar, entre las que podemos mencionar:
 
 \begin{itemize}
-\item MMCALL: sistema que utiliza tecnologías inalámbricas y dispone de pulsadores de llamada colocados en las habitaciones y baños de los pacientes, a través de los cuales solicitan asistencia presionando un botón.La estación de enfermería muestra el número de habitación o cama asignado a ese pulsador de llamada y simultáneamente activa un cronómetro para garantizar una atención oportuna, de manera que si la llamada no es respondida envia un recordatorio tanto a la estación de enfermería como a todos los relojes inalámbricos, con los que cada miembro del personal puede ser equipado, para asegurar que la llamada sea respondida sin importar en qué parte del hospital se encuentren. Todas las llamadas se registran en la estación de enfermería, lo cual permite sacar reportes de desempeño y rendimiento. Su alcance es de 70 a 80 metros, pero se puede extender utilizando amplificadores y repetidores de señal \cite{mmcall}.	
+\item MMCALL: sistema que utiliza tecnologías inalámbricas y dispone de pulsadores de llamada colocados en las habitaciones y baños de los pacientes, a través de los cuales solicitan asistencia presionando un botón. La estación de enfermería muestra el número de habitación o cama asignado a ese pulsador de llamada y simultáneamente activa un cronómetro para garantizar una atención oportuna, de manera que si la llamada no es respondida envía un recordatorio tanto a la estación de enfermería como a todos los relojes inalámbricos, con los que cada miembro del personal puede ser equipado, para asegurar que la llamada sea respondida sin importar en qué parte del hospital se encuentren. Todas las llamadas se registran en la estación de enfermería, lo cual permite sacar reportes de desempeño y rendimiento. El alcance de la señal es de 70 a 80 metros, pero se puede extender utilizando amplificadores y repetidores de señal \cite{mmcall}.	
 
-\item Helpnex: sistema modular que utiliza tecnología IP, dispone de pulsadores para cama y baño que permiten que el paciente solicite asistencia presionando un botón, y permite visualizar y atender el requerimiento, pudiendo detallar el motivo o añadir todo tipo de observaciones. Todas las alarmas y tareas quedan registradas en una base de datos. Ofrece control sobre personas en general, y con desorientación en particular, mediante un tag pequeño y compacto, que permite la localización de la persona, a través de radiofrecuencia (RF) sobre las principales salidas del centro, con distinción entre cercanía o apertura de una puerta, con visualización de alarmas en el plano en tiempo real. Permite también alarma para pasillo con diferentes códigos de colores, emitiendo indicación sonora y luminosa LED. Además ofrece la posibilidad de disponer de un puesto de control para la emisión de informes personalizados, permitiendo conocer todo lo ocurrido en el centro \cite{helpnex}.
+\item Helpnex: sistema modular que utiliza tecnología IP, dispone de pulsadores para cama y baño que permiten que el paciente solicite asistencia presionando un botón, y permite visualizar y atender el requerimiento, pudiendo detallar el motivo o añadir todo tipo de observaciones sobre la solicitud. Todas las alarmas y tareas quedan registradas en una base de datos. Ofrece control sobre personas en general, pudiendo obtener su ubicación en tiempo real, mediante un tag pequeño y compacto, que permite la localización de la persona, a través de radiofrecuencia sobre las principales salidas del centro, con distinción entre cercanía o apertura de una puerta, con visualización de alarmas en el plano en tiempo real. Permite también alarma para pasillo con diferentes códigos de colores, emitiendo indicación sonora y luminosa. Además ofrece la posibilidad de disponer de un puesto de control para la emisión de informes personalizados, permitiendo conocer todo lo ocurrido en el centro de atención medica. \cite{helpnex}.
 
-\item Llamador de enfermería inalámbrico SEI: sistema desarrollado para clínicas, hospitales, geriátricos, hogares de ancianos o casas particulares con personas con movilidad reducida. Dispone de un llamador en cada habitación identificado por un número, cada uno dispone de tantos pulsadores como camas posea la habitación. Cuando el paciente presiona el pulsador, se reporta inalámbricamente a una central receptora, encendiendo el LED correspondiente a dicha habitación, y una señal sonora advierte del llamado. Mientras existan llamados activos se oirá un “bip” cada 10 segundos alertando a la persona a cargo del llamado pendiente. Si el llamado lleva activo un tiempo mayor a 5 minutos el LED comenzará a parpadear alertando la demora. Para cancelar el llamado la enfermera o persona a cargo debe dirigirse a la habitación correspondiente y presionar el botón “cancelar” del llamador. Mientras el llamado esté activo, en el llamador destellará un LED indicando dicho estado. El alcance del sistema es de 30 a 35 metros que puede extenderse mediante el uso de retransmisores \cite{sei}.
+\item Llamador de enfermería inalámbrico SEI: sistema desarrollado para clínicas, hospitales, geriátricos, hogares de ancianos o casas particulares con personas con movilidad reducida. Dispone de un llamador en cada habitación identificado por un número, cada uno de estos llamadores dispone de tantos pulsadores como camas posea la habitación. Cuando el paciente presiona el pulsador, se reporta inalámbricamente a una central receptora, encendiendo el LED correspondiente a dicha habitación, y una señal sonora advierte del llamado. Mientras existan llamados activos se oirá un “bip” cada 10 segundos alertando a la persona a cargo del llamado pendiente. Si el llamado lleva activo un tiempo mayor a 5 minutos el LED comenzará a parpadear alertando la demora. Para cancelar el llamado la enfermera o persona a cargo debe dirigirse a la habitación correspondiente y presionar el botón “cancelar” del llamador. Mientras el llamado esté activo, en el llamador destellará un LED indicando dicho estado. El alcance de la señal inalámbrica es de 30 a 35 metros que puede extenderse mediante el uso de retransmisores \cite{sei}.
 
 \end{itemize}
 
-A continuación, se presenta la tabla \ref{tab:sistemasDeLLamadoEnfermera} que resume las características de los sistemas de llamado a enfermera disponibles en el mercado y el sistema actual de SURIX.
+En la tabla \ref{tab:sistemasDeLLamadoEnfermera} se resume las características del sistema de llamado a enfermera de SURIX y de los demás sistemas mencionados.
 
 \begin{table}[h]
 	\centering
 	\caption[Sistemas de llamado a enfermera]{Tabla comparativa de los sistemas de llamado a enfermera disponibles en el mercado}
 	\begin{tabular}{l c c c c}    
 		\toprule
-		\textbf{Característica \textbackslash Sistema} 	 & \textbf{SURIX} & \textbf{MMCALL} & \textbf{Helpnex} & \textbf{SEI}\\
+		\textbf{Característica} 	 & \textbf{SURIX} & \textbf{MMCALL} & \textbf{Helpnex} & \textbf{SEI}\\
 		\midrule
 		Dispositivo llamador inalámbrico 				&  	&  	&  	& X \\
 		Central de enfermera inalámbrica 				&  	& X & X & X \\
@@ -77,7 +77,7 @@ A continuación, se presenta la tabla \ref{tab:sistemasDeLLamadoEnfermera} que r
 
 \subsection{Objetivos}
 
-El objetivo general es dotar de conectividad Bluetooth al sistema actual de llamado a enfermera de SURIX.
+El objetivo general es dotar de conectividad Bluetooth al sistema actual de llamado a enfermera de SURIX. Esto permitirá que el sistema de SURIX cuente con un dispositivo llamador inalámbrico, y una central de enfermera inalámbrica.
 
 Para el logro del objetivo planteado el trabajo contempla:
 
@@ -114,7 +114,7 @@ El alcance del trabajo está definido por las siguientes consideraciones:
 
 El trabajo permite ampliar la capacidad de conexión de la terminal de sala, que actualmente está limitada a sólo dos dispositivos llamadores, de manera que será posible conectar un mayor número de dispositivos llamadores.
 
-Adicionalmente, al tener conectividad Bluetooth, se elimina el riesgo de romper el cable de conexión e inutilizar, al menos temporalmente, el dispositivo llamador cuando el paciente trata de acercarlo a él, y jala del cable.
+Adicionalmente, al tener conectividad Bluetooth, se elimina el riesgo de romper el cable de conexión e inutilizar, al menos temporalmente hasta que se reemplacé el cable, el dispositivo llamador cuando el paciente trata de acercarlo a él, y jala del cable.
 
 Quitar el cable también posibilita que los pacientes que por su estado se encuentren débiles puedan acercar el llamador a su boca haciendo que sea más fácil escuchar su voz.
 
