@@ -25,13 +25,13 @@ En este capítulo se describe el contexto actual del cual parte el trabajo y el 
 %----------------------------------------------------------------------------------------
 \section{Antecedentes y análisis de contexto}
 
-SURIX es una empresa argentina fundada en 1998, que se dedica al desarrollo de sistemas de control de acceso basados en tecnología IP. Actualmente ofrece líneas de productos para el hogar y edificios, aplicaciones tecnológicas personalizadas para corporaciones, industrias, hospitales, centros comerciales, autopistas y entes gubernamentales. Productos que exporta a más de 14 países para diversas aplicaciones, por lo que tiene oficinas en Israel y México \cite{surix}.
+SURIX es una empresa argentina fundada en 1998, que se dedica al desarrollo de sistemas de control de acceso basados en tecnología IP. Actualmente ofrece líneas de productos para el hogar y edificios, aplicaciones tecnológicas personalizadas para corporaciones, industrias, hospitales, centros comerciales, autopistas y entes gubernamentales. Estos productos que exporta a más de 14 países para diversas aplicaciones, por lo que tiene oficinas en Israel y México \cite{surix}.
 
-Entre los productos ofertados por SURIX, se destaca el sistema de llamado a enfermera. Este consta de un dispositivo llamador, que se conecta por cable a un terminal de sala. Esta a su vez se conecta a través de una red con el terminal de enfermería \cite{helpip}.
+Entre los productos ofertados por SURIX, se destaca el sistema de llamado a enfermera. Este consta de un dispositivo llamador, que se conecta por cable a un terminal de sala, que a su vez se conecta a través de una red con el terminal de enfermería \cite{helpip}.
 
 Desde el dispositivo llamador, el paciente puede encender la luz de lectura o –lo que es más relevante– requerir la atención del personal de servicio a la habitación. En caso de necesitar atención, el terminal de sala iniciará una llamada VoIP con el terminal de enfermería.
 
-El sistema diferencia un llamado para servicio a la habitacion, asistencia en el baño o asistencia en caso paro cardíaco, y si fue atendido por enfermería remotamente o se está en presencia de la enfermera. También cuando concluye el servicio.
+El sistema diferencia un llamado para servicio a la habitacion, asistencia en el baño o asistencia en caso de paro cardíaco, y si fue atendido por enfermería remotamente o se está en presencia de la enfermera. También indica cuando concluye el servicio de la enfermera en el cuarto.
 
 Además permite visibilizar la solicitud y tipo de solicitud, por medio de una luminaria ubicada en el pasillo sobre la puerta de la habitación , que se puede configurar para iluminarse de diversos colores o encenderse intermitentemente en función del tipo de solicitud del paciente.
 
@@ -48,7 +48,7 @@ En el mercado existen varias soluciones similares a la que se desea desarrollar,
 
 \end{itemize}
 
-En la tabla \ref{tab:sistemasDeLLamadoEnfermera} se resume las características del sistema de llamado a enfermera de SURIX y de los demás sistemas mencionados.
+En la tabla \ref{tab:sistemasDeLLamadoEnfermera} se resumen las características del sistema de llamado a enfermera de SURIX y de los demás sistemas mencionados.
 
 \begin{table}[h]
 	\centering
@@ -86,7 +86,7 @@ En la figura \ref{fig:sistemasDeLLamadoactuales} se ilustran los distintos equip
 
 \subsection{Objetivos}
 
-El objetivo general es dotar de conectividad Bluetooth al sistema actual de llamado a enfermera de SURIX. Esto permitirá que el sistema de SURIX cuente con un dispositivo llamador inalámbrico, y una central de enfermera inalámbrica. Adicionalmente permitirá en un futuro que se implemente un sistema de localización de pacientes.
+El objetivo general de este trabajo es dotar de conectividad Bluetooth al sistema actual de llamado a enfermera de SURIX. Esto permitirá que el sistema de SURIX cuente con un dispositivo llamador inalámbrico, y una central de enfermera inalámbrica. Adicionalmente permitirá en un futuro que se implemente un sistema de localización de pacientes.
 
 Para el logro del objetivo planteado el trabajo contempla:
 
@@ -123,7 +123,7 @@ El alcance del trabajo está definido por las siguientes consideraciones:
 
 El trabajo permite ampliar la capacidad de conexión de la terminal de sala, que actualmente está limitada a sólo dos dispositivos llamadores, de manera que será posible conectar un mayor número de dispositivos llamadores.
 
-Adicionalmente, al tener conectividad Bluetooth, se elimina el riesgo de romper el cable de conexión e inutilizar, al menos temporalmente hasta que se reemplacé el cable, el dispositivo llamador cuando el paciente trata de acercarlo a él, y jala del cable.
+Adicionalmente, los equipos que se conectan mediante cables pueden quedar fuera de servicio cuando el paciente rompe accidentalmente el cable. En cambio, al utilizar conectividad Bluetooth este problema se evita por completo.
 
 Quitar el cable también posibilita que los pacientes que por su estado se encuentren débiles puedan acercar el llamador a su boca haciendo que sea más fácil escuchar su voz.
 

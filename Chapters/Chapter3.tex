@@ -4,6 +4,14 @@
 
 En este capítulo se describe el diseño e implementación de los diferentes módulos de software y hardware del sistema, como así también las diferentes herramientas utilizadas.
 
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+\section{Diseño de hardware}
+
 El sistema propuesto reemplazará al sistema actual de SURIX, el mismo que es un llamador cableado que se conecta en uno de los puertos de accesorio que tiene el terminal de sala, y donde tanto el micrófono como el parlante se encuentra ubicado en dicho terminal.
 
 El nuevo sistema cambia la ubicación del micrófono al dispositivo llamador, de manera que ahora está más cerca del paciente. De esta forma se mantiene el parlante en la terminal de sala, mejorando así la comunicación.
@@ -13,23 +21,17 @@ El micrófono seleccionado utiliza la interfaz de audio digital PDM, que es comp
 La comunicación entre el dispositivo Bluetooth y la terminal de llamada se realiza a  través de una interfaz UART, que está disponible en los puertos de accesorios de la terminal de llamada del sistema anterior.
 En este sistema el audio se transmite codificado en PCMU, para mantener compatibilidad con el anterior sistema.
 
-
-%----------------------------------------------------------------------------------------
-%	SECTION 1
-%----------------------------------------------------------------------------------------
-\section{Hardware}
-
-Aunque la idea inicial era diseñar dos placas electrónicas distintas: Una para el dispositivo llamador y, otra para el lado de la terminal sala, como una placa de extensión de la placa principal de dicha terminal, la terminal de llamada, luego de realizar los Diagramas esquemáticos se vio conveniente diseñar un solo diagrama que sirve para ambos dispositivos. 
+Aunque la idea inicial era diseñar dos placas electrónicas distintas: una para el dispositivo llamador y, otra para el lado del terminal sala, que es una placa de extensión de dicho terminal. Luego de realizar los diagramas esquemáticos se vio conveniente diseñar un solo diagrama que sirve para ambos dispositivos. 
 
 Los principales componentes de esta placa son:
 
 \begin{itemize}
 
-\item Un modulo bluetooth LE MDBT42Q-512KV2, que internamente cuenta con un microcontrolador NRF52832 ARM Cortex-M4 de la empresa Nordic, mismo que cumple con las especificaciones de bluetooth LE 5.2, 5.2, 5 y 4.2. Se eligió este módulo porque ya cuenta con una antena de manera que ya no es necesario diseñar la misma. Este módulo se aprecia en la figura \ref{fig:MDBT42}, y sus principales características se resumen en la tabla \ref{tab:CaracteristicasMDBT42}.
+\item Un modulo bluetooth LE MDBT42Q-512KV2 que internamente cuenta con un microcontrolador NRF52832 ARM Cortex-M4 de la empresa Nordic, mismo que cumple con las especificaciones de bluetooth LE 5.2, 5.2, 5 y 4.2. Se eligió este módulo porque ya cuenta con una antena de manera que no es necesario diseñar la misma. Este módulo se aprecia en la figura \ref{fig:MDBT42}, y sus principales características se resumen en la tabla \ref{tab:CaracteristicasMDBT42}.
 
-\item Un micrófono digital con interfaz PDM SDM0401-RS261-G04, seleccionado por su bajo costo y tamaño. Este micrófono se puede observar en la figura \ref{fig:mic} y sus características se muestran en la tabla \ref{tab:caracteristicasMic}.
+\item Un micrófono digital con interfaz PDM SDM0401-RS261-G04 seleccionado por su bajo costo y tamaño. Este micrófono se puede observar en la figura \ref{fig:mic} y sus características se muestran en la tabla \ref{tab:caracteristicasMic}.
 
-\item El circuito cuenta con la posibilidad de incluir hasta cuatro pulsadores para interacción con el usuario, en el dispositivo llamador, dicho número puede variar de acuerdo a las versiones de llamador que tiene actualmente la empresa, que varían de 2 a 4 pulsadores según el modelo. También contará con dos LEDs para que el usuario tenga retroalimentación del funcionamiento del dispositivo.
+\item El circuito cuenta con la posibilidad de incluir hasta cuatro pulsadores para interacción con el usuario, en el dispositivo llamador. Dicho número puede variar de acuerdo a las versiones de llamador que tiene actualmente la empresa, que varían de 2 a 4 pulsadores según el modelo. También contará con dos LEDs para que el usuario tenga retroalimentación del funcionamiento del dispositivo.
 
 \end{itemize}
 
@@ -47,7 +49,7 @@ Los principales componentes de esta placa son:
 		\toprule
 		\textbf{Característica} 	 & \textbf{Valor}\\
 		\midrule
-		Tamano (mm)                                                        & 8.8 x 13.8 x 1.8       \\
+		Tamano (mm)                                                        & 8,8 x 13,8 x 1,8       \\
 \begin{tabular}[c]{@{}l@{}}Especificacion\\ Bluetooth\end{tabular} & BT50.1 / BT5.0 / BT4.2 \\
 Antena                                                             & Incluida en el modulo  \\
 \begin{tabular}[c]{@{}l@{}}Longitud de\\ cobertura\end{tabular}    & \textgreater 80 m      \\
@@ -83,7 +85,7 @@ Directividad                                                      & Omni-Direcci
 	\label{tab:caracteristicasMic}
 \end{table}
 
-Con estos componentes se diseño un diagrama esquemático, a partir del cual se diseñó la placa del dispositivo llamador, que se muestra en la figura \ref{fig:esquematico}.
+Con estos componentes se diseñó un diagrama esquemático, el cual se muestra en la figura \ref{fig:esquematico}, a partir del cual se fabricó la placa del dispositivo llamador. Esta placa se muestra a en la figura \ref{fig:pcb}.
 
 \begin{figure}[htpb]
 	\centering
@@ -92,7 +94,6 @@ Con estos componentes se diseño un diagrama esquemático, a partir del cual se 
 	\label{fig:esquematico}
 \end{figure}
 
-A partir de este de diagrama se diseñó la placa del dispositivo llamador, que se muestra a en la figura \ref{fig:pcb}.
 
 \begin{figure}[htpb]
 	\centering
@@ -101,7 +102,7 @@ A partir de este de diagrama se diseñó la placa del dispositivo llamador, que 
 	\label{fig:pcb}
 \end{figure}
 
-La fabricación de esta placa se ha encargado a una empresa China de confianza de SURIX, motivo por el cual este proceso se retrasó y no es posible mostrarla físicamente.
+La fabricación de esta placa se ha encargado a una empresa China de confianza de SURIX, y por  motivo de la pandemia de COVID-19 el proceso de envió se retrasó y no es posible mostrarla físicamente.
 
 Para que el circuito pueda ser utilizado tanto en el llamador como del lado de la terminal de llamada se ha previsto que el circuito pueda ser alimentado, por la terminal de sala de SURIX en la terminal de llamada, o por 2 baterías tipo AAA en el dispositivo llamador, estas últimas se escogieron debido principalmente a la facilidad de adquirirlas en el mercado y su relativamente bajo costo.
 
@@ -118,13 +119,13 @@ La placa del dispositivo llamador se aloja dentro de un gabinete plástico, el c
 %	SECTION 2
 %----------------------------------------------------------------------------------------
 
-\section{Software}
+\section{Diseño de software}
 
 Para cumplir con los objetivos del trabajo, se dividió el software en tres componentes:
 
 \begin{itemize}
 
-\item El primero que trabaja en bare metal y controla el dispositivo llamador
+\item El primero que trabaja en bare metal y controla el dispositivo llamador.
 
 \item El segundo también trabaja en bare metal y controla la placa de la terminal de llamada.
 
@@ -137,7 +138,7 @@ La implementación de dichos componentes se describen en los apartados \ref{subs
 \subsection{Software del dispositivo llamador}
 \label{subsec:SoftLlam}
 
-En el desarrollo de este firmware se utilizó el paquete de desarrollo de software de Nordic para su familia de microcontroladores 52, de la que es parte el microcontrolador utilizado. Se utilizó la versión 17 de este paquete de desarrollo,  junto con el softdevice s132, que es la implementación más moderna del stack Bluetooth que nos ofrece esta versión del paquete de desarrollo de Nordic.
+En el desarrollo de este firmware se utilizó el paquete de desarrollo de software de Nordic para su familia de microcontroladores 52, de la que es parte el microcontrolador utilizado. Se utilizó la versión 17 de este paquete de desarrollo,  junto con el softdevice s132, que es la implementación más moderna del stack Bluetooth que ofrece esta versión del paquete de desarrollo de Nordic.
 
 Este software se desarrolló utilizando el compilador GCC que proporciona ARM junto con las herramientas de línea de comandos nRF de Nordic.
 
@@ -152,13 +153,13 @@ Para el desarrollo de este firmware se realizó un diagrama de bloques que descr
 
 Este dispositivo al ser productor de datos en la comunicación Bluetooth, y debido a que sólo se conecta a la central receptora del terminal de sala, se lo programa para que en la conexión cumpla el rol de periférico, definido en el estándar de Bluetooth LE. 
 
-Al estar programado de esta manera el dispositivo inicialmente se programó para que, entre los datos que lo identifican, envíe el identificador único del microcontrolador, durante el proceso de advertising, en el cual se da a conocer a todos los dispositivos bluetooth que están escaneando el ambiente cercano. Dicho identificador usará la central receptora del Bluetooth para decidir a qué dispositivos aceptar una conexión.
+Al estar configurado de esta manera el dispositivo se programó para que inicialmente, entre los datos que lo identifican, envíe el identificador único del microcontrolador durante el proceso de advertising en el cual se da a conocer a todos los dispositivos Bluetooth que están escaneando el ambiente cercano. Dicho identificador usará la central receptora del Bluetooth para decidir a qué dispositivos aceptar una conexión.
 
-Una vez emparejado con una central el dispositivo se mantiene en modo de bajo consumo mientras que el usuario no presione ningún botón en el llamador, o hasta que la central receptora, ubicada en el terminal de sala, le indique que prenda su micrófono para iniciar una llamada con el terminal de enfermería.
+Una vez emparejado con una central el dispositivo se mantiene en modo de bajo consumo mientras que el usuario no presione ningún botón en el llamador, o hasta que la central receptora, ubicada en el terminal de sala, le indique que encienda su micrófono para iniciar una llamada con el terminal de enfermería.
 
 Para la notificación de los eventos de presión de botones del dispositivo, el software hace uso de un servicio implementado por la empresa Nordic, Nordic UART Service. Este servicio permite enviar cadenas de caracteres sobre Bluetooth tal como una interfaz serie UART.
 
-Para la parte de audio se implementó un módulo de audio dentro del software, el cual se encarga de inicializar el periférico PDM del microcontrolador para la interacción con el micrófono. Además este módulo se encarga de convertir la señal de 16 khz que nos entrega el periférico, a una de 8 khz,  para finalmente convertirla a PCMU.
+Para la parte de audio se implementó un módulo de audio dentro del software, el cual se encarga de inicializar el periférico PDM del microcontrolador para la interacción con el micrófono. Además este módulo se encarga de convertir la señal de 16 khz que entrega el periférico, a una de 8 khz,  para finalmente convertirla a PCMU.
 
 Con la señal de audio en PCMU se requirió implementar un servicio nuevo que permite enviar la señal de voz capturada por el micrófono, ya que no existe uno disponible en el paquete de desarrollo de Nordic. Este servicio está diseñado para que la central receptora le solicite notificar y enviar cada vez que tenga un paquete de 160 muestras de voz. Cuando esto sucede, el dispositivo llamador enciende su micrófono y empieza con el muestreo de voz.
 
@@ -182,7 +183,7 @@ Para el desarrollo de este firmware se realizó un diagrama de flujo que describ
 
 Este dispositivo es el encargado de recibir datos de todos los dispositivos llamadores, que tenga conectados. Para ello, este dispositivo se programó para que cumpla el rol de central, dentro del estándar Bluetooth BLE, de manera que este dispositivo es capaz de aceptar conexiones de hasta 7 dispositivos.
 
-Al inicializar este dispositivo, se debe configurar el rol antes mencionado, sin embargo no empezará a escanear hasta que reciba todos los identificadores de los llamadores a los que aceptara una conexión.
+Al inicializar este dispositivo, se debe configurar el rol antes mencionado. Sin embargo no empezará a escanear hasta que reciba todos los identificadores de los llamadores a los que aceptara una conexión.
 
 Para recibir estos datos, el dispositivo iniciará la UART presente en el microcontrolador, y esperará a recibir, desde la terminal de sala, las tramas con los identificadores de todos los dispositivos llamadores que tenga asignados para cada cama, los cuales irá guardando en la RAM, en la posición que corresponda según el número de cama recibido, hasta recibir una trama final que le indica que debe empezar a buscar los dispositivos llamadores que tiene registrados. 
 
@@ -202,7 +203,7 @@ Una vez que un dispositivo logra conectarse, la central receptora creará instan
 
 Adicionalmente a estos servicios, la central receptora verifica que todos los dispositivos que tiene conectados, permanezcan conectados. Cuando detecta que un dispositivo no está conectado, envía una notificación al terminal de sala enviando el número de cama al cual el dispositivo llamador estaba registrado.
 
-\subsection{Software de control placa de expansión}
+\subsection{Software de control de la placa de expansión}
 \label{subsec:SoftControl}
 
 Este software es un módulo adicional al firmware que SURIX dispone para sus terminales, el mismo que no tiene una sola aplicación, por lo que dependiendo de la aplicación, este módulo se integrará o no al sistema.
