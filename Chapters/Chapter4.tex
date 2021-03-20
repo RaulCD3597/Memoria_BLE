@@ -28,7 +28,7 @@ El gabinete utilizado para esta prueba se puede apreciar en la figura \ref{fig:G
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}
+	\includegraphics[scale=0.4]{./Figures/gabMet.jpeg}
 	\caption{Gabinete metálico SURIX}
 	\label{fig:GMetalico}
 \end{figure}
@@ -37,14 +37,40 @@ Para medir la potencia de la señal se utilizó la aplicación móvil que propor
 
 Los resultados obtenidos se muestran en la figura \ref{fig:Psenal}.
 
-\begin{figure}[htpb]
+\begin{figure}[!h]
 	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}
+   	\begin{subfigure}[b]{0.45\textwidth}
+   		\centering
+      	\includegraphics[width=1\textwidth]{signalCO.jpeg}
+      	\caption{Medicion a 10 cm de distancia fuera del gabinete}
+      	\label{fig:PsenalA}
+   	\end{subfigure}%
+   	\hfill
+   	\begin{subfigure}[b]{0.45\textwidth}
+   		\centering
+      	\includegraphics[width=1.03\textwidth]{signalCI.jpeg}
+      	\caption{Medicion a 10 cm de distancia dentro del gabinete}
+      	\label{fig:PsenalB}
+   	\end{subfigure}%
+   	\newline
+   	\begin{subfigure}[b]{0.45\textwidth}
+   		\centering
+      	\includegraphics[width=1.04\textwidth]{signalAO.jpeg}
+      	\caption{Medicion a 10 m de distancia fuera del gabinete}
+      	\label{fig:PsenalC}
+   	\end{subfigure}%
+   	\hfill
+   	\begin{subfigure}[b]{0.45\textwidth}
+   		\centering
+      	\includegraphics[width=1\textwidth]{signalAI.jpeg}
+      	\caption{Medicion a 10 m de distancia dentro del gabinete}
+      	\label{fig:PsenalD}
+   	\end{subfigure}%
 	\caption{Resultados medición potencia de señal recibida del módulo de Bluetooth}
 	\label{fig:Psenal}
 \end{figure}
 
-En los apartados (a) y (b) de la figura se observan las mediciones a 10 cm de distancia del dispositivo Bluetooth dentro y fuera del gabinete metálico respectivamente, existiendo una pérdida de 13 dBm. Y en los apartados (c) y (d) se ven las mediciones realizadas a 10 metros de distancia del dispositivo, donde se aprecia una pérdida de tan sólo 7 dBm, por lo que se concluye que las pérdidas son pequeñas y no afectarán a la comunicación.
+En los apartados \ref{fig:PsenalA} y \ref{fig:PsenalB} de la figura se observan las mediciones a 10 cm de distancia del dispositivo Bluetooth dentro y fuera del gabinete metálico respectivamente, existiendo una pérdida de 13 dBm. Y en los apartados \ref{fig:PsenalC} y \ref{fig:PsenalD} se ven las mediciones realizadas a 10 metros de distancia del dispositivo, donde se aprecia una pérdida de tan sólo 7 dBm, por lo que se concluye que las pérdidas son pequeñas y no afectarán a la comunicación.
 
 Finalmente, para determinar de forma práctica que el dispositivo se podría utilizar con estos gabinetes metálicos, se hizo un último ensayo estableciendo una llamada tal como ocurriría  en condiciones reales de uso al interior de una sala de hospital.
 
@@ -64,10 +90,20 @@ El primer servicio que se probó fue el servicio UART de Nordic, que si bien es 
 
 Los resultados del lado del llamador se probaron haciendo uso de las aplicaciones de Nordic para móvil: nRFconnect y nRF Toolbox, con la primera se verificó que el servicio ya estaba presente, y con la segunda que al presionar un botón el dispositivo llamador efectivamente enviaba el mensaje programado. Los resultados de esta prueba se muestran en la figura \ref{fig:Pnus}.
 
-
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}
+   	\begin{subfigure}[b]{0.5\textwidth}
+   		\centering
+      	\includegraphics[width=0.8\textwidth]{nusCC.jpeg}
+      	\caption{Servicio reconocido en nRFConnect}
+      	\label{fig:PnusA}
+   	\end{subfigure}%
+   	\begin{subfigure}[b]{0.5\textwidth}
+   		\centering
+      	\includegraphics[width=0.8\textwidth]{nusCT.jpeg}
+      	\caption{Mensajes recibidos en nRF Toolbox}
+      	\label{fig:PnusB}
+   	\end{subfigure}%
 	\caption{Resultados prueba servicio NUS en el dispositivo llamador}
 	\label{fig:Pnus}
 \end{figure}
@@ -76,7 +112,7 @@ Una vez probado el servicio UART de Nordic en el dispositivo llamador, se probó
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}
+	\includegraphics[scale=0.7]{./Figures/Pnus2.png}
 	\caption{Resultados prueba servicio de NUS en la central receptora}
 	\label{fig:Pnus2}
 \end{figure}
@@ -89,16 +125,28 @@ Para probarlo se hizo uso de las dos aplicaciones móviles antes mencionadas, ot
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}	
+   	\begin{subfigure}[b]{1\textwidth}
+   		\centering
+      	\includegraphics[width=0.5\textwidth]{basCC.jpeg}
+      	\caption{Servicio reconocido en nRFConnect}
+      	\label{fig:PbasA}
+   	\end{subfigure}%
+   	\newline
+   	\begin{subfigure}[b]{1\textwidth}
+   		\centering
+      	\includegraphics[width=0.7\textwidth]{basCT.jpeg}
+      	\caption{Mensajes recibidos en nRF Toolbox}
+      	\label{fig:PbasB}
+   	\end{subfigure}%
 	\caption{Resultados servicio de batería en el dispositivo llamador}
 	\label{fig:Pbas}
 \end{figure}
 
-Para terminar con la parte bluetooth se probó el servicio de batería en la central receptora, verificando que recibía los niveles de batería y que los notificara por UART si el nivel de batería estaba por debajo del 25\%. Los resultados de esta prueba se muestran en la figura \ref{fig:Pbas2}.
+Para terminar con la parte bluetooth se probó el servicio de batería en la central receptora, verificando que recibía los niveles de batería y que los notificara por UART si el nivel de batería estaba por debajo del 25\%. Los resultados de esta prueba se muestran en la figura \ref{fig:Pbas2}, y se pueden verificar la notificación con un mensaje con id 3.
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}	
+	\includegraphics[scale=0.8]{./Figures/Pbas2.png}	
 	\caption{Resultados servicio de batería en la central receptora}
 	\label{fig:Pbas2}
 \end{figure}

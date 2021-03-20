@@ -1,4 +1,4 @@
-\chapter{Diseño e implementación} % Main chapter title
+	\chapter{Diseño e implementación} % Main chapter title
 
 \label{Chapter3}
 
@@ -89,7 +89,7 @@ Con estos componentes se diseñó un diagrama esquemático, el cual se muestra e
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.6]{./Figures/esquematico.jpeg}
+	\includegraphics[scale=1]{./Figures/esquematico2.jpeg}
 	\caption{Diagrama esquemático para placas Bluetooth}
 	\label{fig:esquematico}
 \end{figure}
@@ -110,7 +110,21 @@ La placa del dispositivo llamador se aloja dentro de un gabinete plástico, el c
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.25]{./Figures/gabinete.jpeg}
+   	\begin{subfigure}[b]{0.3\textwidth}
+   		\centering
+      	\includegraphics[width=0.6\textwidth]{gabCall.jpeg}
+      	\caption{Vista frontal}
+   	\end{subfigure}%
+   	\begin{subfigure}[b]{0.3\textwidth}
+   		\centering
+      	\includegraphics[width=0.6\textwidth]{gabA.jpeg}
+      	\caption{Vista trasera con puerto de pilas abierto}
+   	\end{subfigure}%
+   	\begin{subfigure}[b]{0.3\textwidth}
+   		\centering
+      	\includegraphics[width=0.6\textwidth]{gabIN.jpeg}
+      	\caption{Vista interna}
+   	\end{subfigure}%
 	\caption{Prototipo gabinete del dispositivo llamador}
 	\label{fig:gabinete}
 \end{figure}
@@ -142,7 +156,7 @@ En el desarrollo de este firmware se utilizó el paquete de desarrollo de softwa
 
 Este software se desarrolló utilizando el compilador GCC que proporciona ARM junto con las herramientas de línea de comandos nRF de Nordic.
 
-Para el desarrollo de este firmware se realizó un diagrama de bloques que describe de manera general el comportamiento de este software. El diagrama mencionado se muestra en la figura \ref{fig:DiagramaSoftLlam}.
+Para el desarrollo de este firmware se realizó un diagrama statechart UML que describe de manera general el comportamiento de este software. El diagrama mencionado se muestra en la figura \ref{fig:DiagramaSoftLlam}.
 
 \begin{figure}[htpb]
 	\centering
@@ -172,7 +186,7 @@ Finalmente el último servicio implementado, en el firmware, es el servicio de n
 
 Para este software se utilizaron las mismas herramientas de desarrollo utilizadas para desarrollar el software del dispositivo llamador, mencionadas en el acápite \ref{subsec:SoftLlam}.
 
-Para el desarrollo de este firmware se realizó un diagrama de flujo que describe el comportamiento general de este software. El diagrama mencionado se muestra en la figura \ref{fig:DiagramaSoftCentral}.
+Para el desarrollo de este firmware se realizó un diagrama statechart UML que describe el comportamiento general de este software. El diagrama mencionado se muestra en la figura \ref{fig:DiagramaSoftCentral}.
 
 \begin{figure}[htpb]
 	\centering
@@ -210,7 +224,7 @@ Este software es un módulo adicional al firmware que SURIX dispone para sus ter
 
 El firmware del que forma parte este módulo, es un sistema implementado sobre un sistema operativo FreeRTOS, que ya tiene implementado el protocolo SIP, que permite al módulo realizar llamadas al terminal de enfermería, además de una página web de configuración del terminal.
 
-El comportamiento general de este módulo se observa en el diagrama de flujo diseñado para su desarrollo, el mismo que se muestra en la figura \ref{fig:DiagramaSoftControl}.
+El comportamiento general de este módulo se observa en el diagrama statechart UML diseñado para su desarrollo, el mismo que se muestra en la figura \ref{fig:DiagramaSoftControl}.
 
 \begin{figure}[htpb]
 	\centering
