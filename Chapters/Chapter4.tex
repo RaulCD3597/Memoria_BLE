@@ -146,7 +146,7 @@ Para terminar con la parte bluetooth se probó el servicio de batería en la cen
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.8]{./Figures/Pbas2.png}	
+	\includegraphics[scale=0.7]{./Figures/Pbas2.png}	
 	\caption{Resultados servicio de batería en la central receptora}
 	\label{fig:Pbas2}
 \end{figure}
@@ -155,18 +155,21 @@ Con los servicios de bluetooth probados, se procedió a implementar y probar el 
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}	
+   	\begin{subfigure}[b]{1\textwidth}
+   		\centering
+      	\includegraphics[width=0.8\textwidth]{regcall.png}
+      	\caption{Llamadores registrados en pagina web de la terminal de sala}
+      	\label{fig:PllamA}
+   	\end{subfigure}%
+   	\newline
+   	\begin{subfigure}[b]{1\textwidth}
+   		\centering
+      	\includegraphics[width=0.8\textwidth]{regcall1.png}
+      	\caption{Mensajes enviados para registrar llamadores en central receptora}
+      	\label{fig:PllamB}
+   	\end{subfigure}%
 	\caption{Resultados del registro de identificadores de los dispositivos llamadores}
 	\label{fig:Pllam}
-\end{figure}
-
-Finalmente se probó que el terminal sea capaz de recibir datos por la interfaz UART, interpretarlos y realizar la acción correspondiente al evento. Los resultados se muestran en la figura \ref{fig:Pllam2}.
-
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}	
-	\caption{Resultados recepción de novedades en terminal de sala}
-	\label{fig:Pllam2}
 \end{figure}
 
 \section{Pruebas de envío y recepción de audio por Bluetooth}
@@ -178,7 +181,7 @@ Para empezar se desarrolló un driver para controlar el micrófono con la interf
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}	
+	\includegraphics[scale=0.8]{./Figures/pdm.png}	
 	\caption{Resultados driver de microfono PDM}
 	\label{fig:Ppdm}
 \end{figure}
@@ -187,7 +190,7 @@ Con la interfaz funcionando, la siguiente tarea fue probar que el servicio imple
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}	
+	\includegraphics[scale=0.5]{./Figures/acsCC.jpeg}	
 	\caption{Resultados servicio de audio en el dispositivo llamador}
 	\label{fig:Pacs}
 \end{figure}
@@ -196,7 +199,7 @@ Del lado de la central receptora se probó que los datos se reciben en el nuevo 
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}	
+	\includegraphics[scale=0.5]{./Figures/acsCR.png}	
 	\caption{Resultados servicio de audio en central receptora}
 	\label{fig:Pacs2}
 \end{figure}
@@ -205,7 +208,7 @@ La segunda prueba realizada con los datos recibidos por UART, fue graficar en ti
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}	
+	\includegraphics[scale=0.4]{./Figures/callpython.jpeg}	
 	\caption{Grafica señal de audio recibida del dispositivo llamador}
 	\label{fig:Psau}
 \end{figure}
@@ -221,7 +224,7 @@ Para comprobar que los dispositivos llamadores fueron correctamente registrados,
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}	
+	\includegraphics[scale=0.45]{./Figures/callcon.jpeg}	
 	\caption{Dispositivo llamador conectado}
 	\label{fig:Pmcon}
 \end{figure}
@@ -230,7 +233,26 @@ Posteriormente, con un analizador lógico conectado en paralelo a la interfaz UA
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}	
+   	\begin{subfigure}[b]{1\textwidth}
+   		\centering
+      	\includegraphics[width=1\textwidth]{intRcv.png}
+      	\caption{Mensaje recibido en el terminal de sala}
+      	\label{fig:PmrcvA}
+   	\end{subfigure}%
+   	\newline
+   	\begin{subfigure}[b]{1\textwidth}
+   		\centering
+      	\includegraphics[width=1\textwidth]{intSend.png}
+      	\caption{mensaje envido por el terminal de sala al dispositivo llamador}
+      	\label{fig:PmrcvB}
+   	\end{subfigure}%
+   	\newline
+   	\begin{subfigure}[b]{1\textwidth}
+   		\centering
+      	\includegraphics[width=1\textwidth]{intAu.png}
+      	\caption{Señal de audio recibida por el terminal de sala}
+      	\label{fig:PmrcvC}
+   	\end{subfigure}%
 	\caption{Mensajes recibidos por el terminal de sala}
 	\label{fig:Pmrcv}
 \end{figure}
@@ -239,15 +261,27 @@ Finalmente la última prueba realizada al sistema fue iniciar una llamada con un
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}	
-	\caption{Mensajes recibidos por el terminal de sala}
+	\includegraphics[scale=0.45]{./Figures/callCtrue.jpeg}	
+	\caption{Llamador durante llamada en curso}
 	\label{fig:Pmicon}
 \end{figure}
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.15]{./Figures/DKMDBT42Q-512KV2.jpg}	
-	\caption{Mensajes recibidos por el terminal de sala}
+   	\begin{subfigure}[b]{1\textwidth}
+   		\centering
+      	\includegraphics[width=1\textwidth]{rtp.png}
+      	\caption{Paquetes RTP enviados por el terminal de sala}
+      	\label{fig:PsrtpA}
+   	\end{subfigure}%
+   	\newline
+   	\begin{subfigure}[b]{1\textwidth}
+   		\centering
+      	\includegraphics[width=1\textwidth]{rtpStream.png}
+      	\caption{Grafica paquetes RTP enviados por el terminal de sala}
+      	\label{fig:PsrtpB}
+   	\end{subfigure}%
+	\caption{Señal de voz enviada durante llamada}
 	\label{fig:Psrtp}
 \end{figure}
 
