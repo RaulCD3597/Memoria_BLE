@@ -12,16 +12,15 @@ En este capítulo se describe el diseño e implementación de los diferentes mó
 %----------------------------------------------------------------------------------------
 \section{Diseño de hardware}
 
-El sistema propuesto reemplazará al sistema actual de SURIX, el mismo que es un llamador cableado que se conecta en uno de los puertos de accesorio que tiene el terminal de sala, y donde tanto el micrófono como el parlante se encuentra ubicado en dicho terminal.
+El sistema propuesto reemplazará al sistema actual de SURIX, el mismo que es un llamador cableado que se conecta en uno de los puertos de accesorio que tiene el terminal de sala, y donde tanto el micrófono como el parlante se encuentran ubicados en dicho terminal.
 
-El nuevo sistema cambia la ubicación del micrófono al dispositivo llamador, de manera que ahora está más cerca del paciente. De esta forma se mantiene el parlante en la terminal de sala, mejorando así la comunicación.
+El nuevo sistema cambia la ubicación del micrófono al dispositivo llamador, de manera que ahora está más cerca del paciente. De esta forma se mantiene el parlante en la terminal de sala, lo que permite una mejora en la comunicación.
 
-El micrófono seleccionado utiliza la interfaz de audio digital PDM, que es compatible con el procesador elegido dispone de un periférico para controlar micrófonos con este tipo de interfaz.
+El micrófono seleccionado utiliza la interfaz de audio digital PDM \cite{PDM}, que es compatible con el procesador elegido, el cual dispone de un periférico para controlar micrófonos con este tipo de interfaz.
 
-La comunicación entre el dispositivo Bluetooth y la terminal de llamada se realiza a  través de una interfaz UART, que está disponible en los puertos de accesorios de la terminal de llamada del sistema anterior.
-En este sistema el audio se transmite codificado en PCMU, para mantener compatibilidad con el anterior sistema.
+La comunicación entre el dispositivo Bluetooth y la terminal de llamada se realiza a  través de una interfaz UART, que está disponible en los puertos de accesorio de la terminal de llamada del sistema anterior. En este sistema el audio se transmite codificado en PCMU \cite{PCMU}, para mantener compatibilidad con el anterior sistema.
 
-Aunque la idea inicial era diseñar dos placas electrónicas distintas: una para el dispositivo llamador y, otra para el lado del terminal sala, que es una placa de extensión de dicho terminal. Luego de realizar los diagramas esquemáticos se vio conveniente diseñar un solo diagrama que sirve para ambos dispositivos. 
+Aunque la idea inicial era diseñar dos placas electrónicas distintas: una para el dispositivo llamador y otra para el lado del terminal sala, que es una placa de extensión de dicho terminal. Luego de realizar los diagramas esquemáticos se vio conveniente diseñar un solo diagrama que sirva para ambos dispositivos. 
 
 Los principales componentes de esta placa son:
 
@@ -38,13 +37,13 @@ Los principales componentes de esta placa son:
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=0.15]{./Figures/MDBT42Q.jpg}
-	\caption{Modulo MDBT42Q-512KV2}
+	\caption{Modulo MDBT42Q-512KV2.}
 	\label{fig:MDBT42}
 \end{figure}
 
 \begin{table}[h]
 	\centering
-	\caption[Características modulo MDBT42Q-512KV2]{Tabla de características modulo MDBT42Q-512KV2}
+	\caption[Características modulo MDBT42Q-512KV2]{Tabla de características modulo MDBT42Q-512KV2.}
 	\begin{tabular}{l c}    
 		\toprule
 		\textbf{Característica} 	 & \textbf{Valor}\\
@@ -65,13 +64,13 @@ Pines GPIO                                                         & 32						\\
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=0.3]{./Figures/mic.png}
-	\caption{Micrófono SDM0401-RS261-G04}
+	\caption{Micrófono SDM0401-RS261-G04.}
 	\label{fig:mic}
 \end{figure}
 
 \begin{table}[h]
 	\centering
-	\caption[Características micrófono SDM0401-RS261-G04]{Tabla de características micrófono SDM0401-RS261-G04}
+	\caption[Características micrófono SDM0401-RS261-G04]{Tabla de características micrófono SDM0401-RS261-G04.}
 	\begin{tabular}{l c}    
 		\toprule
 		\textbf{Característica} 	 & \textbf{Valor}\\
@@ -85,12 +84,12 @@ Directividad                                                      & Omni-Direcci
 	\label{tab:caracteristicasMic}
 \end{table}
 
-Con estos componentes se diseñó un diagrama esquemático, el cual se muestra en la figura \ref{fig:esquematico}, a partir del cual se fabricó la placa del dispositivo llamador. Esta placa se muestra a en la figura \ref{fig:pcb}.
+Con estos componentes se diseñó un diagrama esquemático, que se muestra en la figura \ref{fig:esquematico}, a partir del cual se fabricó la placa del dispositivo llamador. Esta placa se muestra a en la figura \ref{fig:pcb}.
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=1]{./Figures/esquematico2.jpeg}
-	\caption{Diagrama esquemático para placas Bluetooth}
+	\includegraphics[scale=0.8]{./Figures/esquematico2.jpeg}
+	\caption{Diagrama esquemático para placas Bluetooth.}
 	\label{fig:esquematico}
 \end{figure}
 
@@ -98,34 +97,34 @@ Con estos componentes se diseñó un diagrama esquemático, el cual se muestra e
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=0.4]{./Figures/placas.jpeg}
-	\caption{Placa dispositivo llamador}
+	\caption{Placa dispositivo llamador.}
 	\label{fig:pcb}
 \end{figure}
 
-La fabricación de esta placa se ha encargado a una empresa China de confianza de SURIX, y por  motivo de la pandemia de COVID-19 el proceso de envió se retrasó y no es posible mostrarla físicamente.
+Por motivo de la pandemia de COVID-19 la fabricación de esta placa no pudo ser llevada a cabo en tiempo y forma y por lo tanto no es posible mostrar una representación física de la misma.
 
-Para que el circuito pueda ser utilizado tanto en el llamador como del lado de la terminal de llamada se ha previsto que el circuito pueda ser alimentado, por la terminal de sala de SURIX en la terminal de llamada, o por 2 baterías tipo AAA en el dispositivo llamador, estas últimas se escogieron debido principalmente a la facilidad de adquirirlas en el mercado y su relativamente bajo costo.
+Para que el circuito pueda ser utilizado tanto en el llamador como del lado de la terminal de llamada se ha previsto que el circuito pueda ser alimentado, por la terminal de sala de SURIX en el caso de la terminal de llamada, o por 2 baterías tipo AAA en el dispositivo llamado. Estas últimas se escogieron debido principalmente a la facilidad de adquirirlas en el mercado y su relativo bajo costo.
 
-La placa del dispositivo llamador se aloja dentro de un gabinete plástico, el cual se muestra en la figura \ref{fig:gabinete}, sin embargo este se modificara segun las necesidades de SURIX.
+La placa del dispositivo llamador se aloja dentro de un gabinete plástico, el cual se muestra en la figura \ref{fig:gabinete}. Sin embargo, se prevee que este se modifique según las necesidades de SURIX.
 
 \begin{figure}[htpb]
 	\centering
    	\begin{subfigure}[b]{0.3\textwidth}
    		\centering
       	\includegraphics[width=0.6\textwidth]{gabCall.jpeg}
-      	\caption{Vista frontal}
+      	\caption{Vista frontal.}
    	\end{subfigure}%
    	\begin{subfigure}[b]{0.3\textwidth}
    		\centering
       	\includegraphics[width=0.6\textwidth]{gabA.jpeg}
-      	\caption{Vista trasera con puerto de pilas abierto}
+      	\caption{Vista trasera con puerto de pilas abierto.}
    	\end{subfigure}%
    	\begin{subfigure}[b]{0.3\textwidth}
    		\centering
       	\includegraphics[width=0.6\textwidth]{gabIN.jpeg}
-      	\caption{Vista interna}
+      	\caption{Vista interna.}
    	\end{subfigure}%
-	\caption{Prototipo gabinete del dispositivo llamador}
+	\caption{Prototipo gabinete del dispositivo llamador.}
 	\label{fig:gabinete}
 \end{figure}
 
@@ -141,7 +140,7 @@ Para cumplir con los objetivos del trabajo, se dividió el software en tres comp
 
 \item El primero que trabaja en bare metal y controla el dispositivo llamador.
 
-\item El segundo también trabaja en bare metal y controla la placa de la terminal de llamada.
+\item El segundo que también trabaja en bare metal y controla la placa de la terminal de llamada.
 
 \item El tercero es un módulo que se agrega al software del sistema hospitalario de SURIX, el cual trabaja con el sistema operativo FreeRTOS.
 
@@ -152,7 +151,7 @@ La implementación de dichos componentes se describen en los apartados \ref{subs
 \subsection{Software del dispositivo llamador}
 \label{subsec:SoftLlam}
 
-En el desarrollo de este firmware se utilizó el paquete de desarrollo de software de Nordic para su familia de microcontroladores 52, de la que es parte el microcontrolador utilizado. Se utilizó la versión 17 de este paquete de desarrollo,  junto con el softdevice s132, que es la implementación más moderna del stack Bluetooth que ofrece esta versión del paquete de desarrollo de Nordic.
+En el desarrollo de este firmware se utilizó el paquete de desarrollo de software de Nordic para su familia de microcontroladores 52, de la que es parte el microcontrolador utilizado \citep{SDK}. Se utilizó la versión 17 de este paquete de desarrollo,  junto con el softdevice s132, que es la implementación más moderna del stack Bluetooth que ofrece esta versión del paquete de desarrollo de Nordic.
 
 Este software se desarrolló utilizando el compilador GCC que proporciona ARM junto con las herramientas de línea de comandos nRF de Nordic.
 
@@ -161,43 +160,43 @@ Para el desarrollo de este firmware se realizó un diagrama statechart UML que d
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=0.8]{./Figures/DCaller.jpeg}
-	\caption{Diagrama de bloques del software del llamador}
+	\caption{Diagrama statechart UML del software del llamador.}
 	\label{fig:DiagramaSoftLlam}
 \end{figure}
 
-Este dispositivo al ser productor de datos en la comunicación Bluetooth, y debido a que sólo se conecta a la central receptora del terminal de sala, se lo programa para que en la conexión cumpla el rol de periférico, definido en el estándar de Bluetooth LE. 
+Este dispositivo al ser productor de datos en la comunicación Bluetooth, y debido a que sólo se conecta a la central receptora del terminal de sala, se lo programa para que en la conexión cumpla el rol de periférico, definido en el estándar de Bluetooth LE \citep{BLESPEC}. 
 
-Al estar configurado de esta manera el dispositivo se programó para que inicialmente, entre los datos que lo identifican, envíe el identificador único del microcontrolador durante el proceso de advertising en el cual se da a conocer a todos los dispositivos Bluetooth que están escaneando el ambiente cercano. Dicho identificador usará la central receptora del Bluetooth para decidir a qué dispositivos aceptar una conexión.
+Al estar configurado de esta manera el dispositivo se programó para que inicialmente, entre los datos que lo identifican, envíe el identificador único del microcontrolador durante el proceso de advertising en el cual se da a conocer a todos los dispositivos Bluetooth que están escaneando el ambiente cercano. Dicho identificador será usado por la central receptora del Bluetooth para decidir a qué dispositivos aceptar una conexión.
 
-Una vez emparejado con una central el dispositivo se mantiene en modo de bajo consumo mientras que el usuario no presione ningún botón en el llamador, o hasta que la central receptora, ubicada en el terminal de sala, le indique que encienda su micrófono para iniciar una llamada con el terminal de enfermería.
+Una vez emparejado con una central, el dispositivo se mantiene en modo de bajo consumo mientras que el usuario no presione ningún botón en el llamador, o hasta que la central receptora, ubicada en el terminal de sala, le indique que encienda su micrófono para iniciar una llamada con el terminal de enfermería.
 
-Para la notificación de los eventos de presión de botones del dispositivo, el software hace uso de un servicio implementado por la empresa Nordic, Nordic UART Service. Este servicio permite enviar cadenas de caracteres sobre Bluetooth tal como una interfaz serie UART.
+Para la notificación de los eventos de presión de botones del dispositivo, el software hace uso de un servicio implementado por la empresa Nordic, Nordic UART Service \citep{NUS}. Este servicio permite enviar cadenas de caracteres sobre Bluetooth tal como una interfaz serie UART.
 
-Para la parte de audio se implementó un módulo de audio dentro del software, el cual se encarga de inicializar el periférico PDM del microcontrolador para la interacción con el micrófono. Además este módulo se encarga de convertir la señal de 16 khz que entrega el periférico, a una de 8 khz,  para finalmente convertirla a PCMU.
+Para la parte de audio se implementó un módulo de audio dentro del software, el cual se encarga de inicializar el periférico PDM del microcontrolador para la interacción con el micrófono. Además, este módulo se encarga de convertir la señal de 16 khz que entrega el periférico, a una de 8 khz,  para finalmente convertirla a PCMU.
 
-Con la señal de audio en PCMU se requirió implementar un servicio nuevo que permite enviar la señal de voz capturada por el micrófono, ya que no existe uno disponible en el paquete de desarrollo de Nordic. Este servicio está diseñado para que la central receptora le solicite notificar y enviar cada vez que tenga un paquete de 160 muestras de voz. Cuando esto sucede, el dispositivo llamador enciende su micrófono y empieza con el muestreo de voz.
+Con la señal de audio en PCMU se requirió implementar un servicio nuevo que permita enviar la señal de voz capturada por el micrófono, ya que no existe uno disponible en el paquete de desarrollo de Nordic. Este servicio está diseñado para que la central receptora le solicite notificar y enviar cada vez que tenga un paquete de 160 muestras de voz. Cuando esto sucede, el dispositivo llamador enciende su micrófono y empieza con el muestreo de voz.
 
 Para cumplir con las especificaciones PCMU, el firmware está configurado para enviar paquetes cada 20 ms, siempre que existan datos para ser transmitidos.
 
-Finalmente el último servicio implementado, en el firmware, es el servicio de notificación de estado de batería, BAS por sus siglas en inglés, que es un servicio estándar en definido por el grupo de interés especial de Bluetooth (Bluetooth SIG). Para poder recolectar los datos que necesita este servicio, se utilizó el conversor analogico digital que lee permanentemente el nivel carga de la batería, el mismo que cada cierto tiempo, configurado para el servicio, notifica a la central receptora.
+Finalmente el último servicio implementado, en el firmware, es el servicio de notificación de estado de batería, BAS por sus siglas en inglés, que es un servicio estándar definido por el grupo de interés especial de Bluetooth (Bluetooth SIG). Para poder recolectar los datos que necesita este servicio se utilizó un conversor analógico digital que lee permanentemente el nivel carga de la batería y que cada cierto tiempo notifica a la central receptora.
 
 \subsection{Software de la central receptora}
 \label{subsec:SoftCentral}
 
-Para este software se utilizaron las mismas herramientas de desarrollo utilizadas para desarrollar el software del dispositivo llamador, mencionadas en el acápite \ref{subsec:SoftLlam}.
+Para este software se utilizaron las mismas herramientas de desarrollo utilizadas para desarrollar el software del dispositivo llamador, mencionadas en el sección \ref{subsec:SoftLlam}.
 
 Para el desarrollo de este firmware se realizó un diagrama statechart UML que describe el comportamiento general de este software. El diagrama mencionado se muestra en la figura \ref{fig:DiagramaSoftCentral}.
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=0.8]{./Figures/Dcentral.jpeg}
-	\caption{Diagrama de bloques software central receptora}
+	\caption{Diagrama statechart UML software central receptora.}
 	\label{fig:DiagramaSoftCentral}
 \end{figure}
 
-Este dispositivo es el encargado de recibir datos de todos los dispositivos llamadores, que tenga conectados. Para ello, este dispositivo se programó para que cumpla el rol de central, dentro del estándar Bluetooth BLE, de manera que este dispositivo es capaz de aceptar conexiones de hasta 7 dispositivos.
+Este dispositivo es el encargado de recibir datos de todos los dispositivos llamadores que tenga conectados. Para ello, este dispositivo se programó para que cumpla el rol de central, dentro del estándar Bluetooth BLE, de manera que este dispositivo es capaz de aceptar conexiones de hasta 7 dispositivos.
 
-Al inicializar este dispositivo, se debe configurar el rol antes mencionado. Sin embargo no empezará a escanear hasta que reciba todos los identificadores de los llamadores a los que aceptara una conexión.
+Al inicializar este dispositivo, se debe configurar el rol antes mencionado. Sin embargo, no empezará a escanear hasta que reciba todos los identificadores de los llamadores a los que aceptará una conexión.
 
 Para recibir estos datos, el dispositivo iniciará la UART presente en el microcontrolador, y esperará a recibir, desde la terminal de sala, las tramas con los identificadores de todos los dispositivos llamadores que tenga asignados para cada cama, los cuales irá guardando en la RAM, en la posición que corresponda según el número de cama recibido, hasta recibir una trama final que le indica que debe empezar a buscar los dispositivos llamadores que tiene registrados. 
 
@@ -211,7 +210,7 @@ Una vez que un dispositivo logra conectarse, la central receptora creará instan
 
 \item Servicio de Audio, que al igual que en el software del dispositivo llamador, se implementó uno nuevo, debido a que no existe uno disponible. Este servicio se encarga de notificar al dispositivo llamador correspondiente, cada vez que se necesita iniciar una llamada, para que este encienda su micrófono y empiece a muestrear, y le solicita notificar, cada vez que tenga una trama de audio en PCMU, la cual recibe a través este servicio. Cuando la central receptora recibe una trama, este servicio se encarga de reenviar dicha trama por la interfaz UART al terminal de sala.
 
-\item Servicio de batería, que como se mencionó en el acápite 3.2.1 es un servicio estándar de Bluetooth LE. Cuando dicho dispositivo se conecta, este servicio le solicitará que empiece a notificar el nivel de carga de su batería. Adicionalmente, la aplicación cada vez que reciba una notificación en este servicio, verifica si está por debajo del 25\%, y de ser así, notifica este evento al terminal de sala, a través de la interfaz UART, identificando al dispositivo llamador en el que se produjo este evento
+\item Servicio de batería, que como se mencionó en el sección \ref{subsec:SoftLlam} es un servicio estándar de Bluetooth LE. Cuando dicho dispositivo se conecta, este servicio le solicitará que empiece a notificar el nivel de carga de su batería. Adicionalmente, la aplicación cada vez que reciba una notificación en este servicio, verifica si está por debajo del 25\%, y de ser así, notifica este evento al terminal de sala, a través de la interfaz UART, identificando al dispositivo llamador en el que se produjo este evento
 
 \end{itemize}
 
@@ -229,7 +228,7 @@ El comportamiento general de este módulo se observa en el diagrama statechart U
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=0.8]{./Figures/Dcontrol.jpeg}
-	\caption{Diagrama de bloques software de control de la placa de expansión}
+	\caption{Diagrama statechart UML software de control de la placa de expansión.}
 	\label{fig:DiagramaSoftControl}
 \end{figure}
 

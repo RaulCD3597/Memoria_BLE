@@ -17,21 +17,20 @@ En este capítulo se mencionan los aspectos más importantes del trabajo realiza
 
 En este trabajo se implementó de manera exitosa un sistema de llamado a enfermera, inalámbrico, con conectividad bluetooth LE. Para ello se diseñaron e implementaron diferentes módulos de firmware, que permiten que un paciente solicite atención de enfermería, pudiendo incluso establecer una comunicación de voz con la enfermera asignada, todo ello a través del llamador inalámbrico que tiene asignado.
 
-El dotar de una conectividad Bluetooth a la central de sala, la hace más versátil y abre un abanico de ampliar sus capacidades y aplicaciones no solo en el ámbito hospitalario, sino en otros ámbitos en los que SURIX trabaja.
+El dotar de una conectividad Bluetooth a la central de sala, la hace más versátil y permitirá ampliar sus capacidades y aplicaciones no solo en el ámbito hospitalario, sino en otros ámbitos en los que SURIX trabaja.
 
-Lastimosamente no se pudieron realizar pruebas sobre el producto final de hardware diseñado, ya que las placas electrónicas se han mandado a fabricar a China y debido a la pandemia de COVID-19, aunque se encuentran ya fabricadas está pendiente su transporte a Argentina.
 Para el desarrollo del trabajo, fueron indispensables los conocimientos adquiridos en diferentes materias de la Carrera de Especialización en Sistemas Embebidos, entre las que se destacan las siguientes:
 
 
 \begin{itemize}
 
-\item Sistemas operativos de tiempo real I y II: constituyeron el primer contacto con un RTOS y permitieron aprender acerca del uso de tareas, recursos de sincronización y comunicación entre ellas, y uso de memoria e interrupciones en el contexto de un RTOS, mismos que fueron requeridos para integrar el firmware de control en el sistema de la empresa.
+\item Sistemas operativos de tiempo real I y II: constituyeron el primer contacto con un RTOS y permitieron aprender acerca del uso de tareas, recursos de sincronización y comunicación entre ellas, y uso de memoria e interrupciones en el contexto de un RTOS. Estos fueron requeridos para integrar el firmware de control en el sistema de la empresa.
 
 \item Protocolos de comunicación en sistemas embebidos: la interfaces de comunicación vistas (Bluetooth y UART) fueron una parte integral del trabajo realizado.
 
 \item Ingeniería de software en sistemas embebidos: permitió adquirir buenas prácticas de desarrollo de software, y elaborar el diseño de algunos módulos de firmware en una etapa temprana del trabajo.
 
-\item Desarrollo de aplicaciones en sistemas operativos de propósito general: pues se requirió desarrollar software complementario que fue de mucha ayuda al momento de validar el funcionamiento del servicio de audio desarrollado.
+\item Desarrollo de aplicaciones en sistemas operativos de propósito general: se requirió desarrollar software complementario que fue de mucha ayuda al momento de validar el funcionamiento del servicio de audio desarrollado.
 
 \end{itemize}
 
@@ -41,7 +40,7 @@ Para el desarrollo del trabajo, fueron indispensables los conocimientos adquirid
 %----------------------------------------------------------------------------------------
 \section{Próximos pasos}
 
-El próximo paso lógico para el trabajo realizado será realizar las pruebas finales con el hardware de SURIX. Con el hardware probado se podrá agregar más valor al sistema con la posibilidad de agregar más servicios al dispositivo llamador, como por ejemplo un servicio que posibilite su uso para localización de pacientes dentro del hospital, característica con la que cuentan algunos sistemas del mercado.
+El próximo paso para el trabajo realizado será realizar las pruebas finales con el hardware de SURIX. Con el hardware probado se podrá agregar más valor al sistema con la posibilidad de agregar más servicios al dispositivo llamador, como por ejemplo un servicio que posibilite su uso para localización de pacientes dentro del hospital, característica con la que cuentan algunos sistemas del mercado.
 
 Además, SURIX en el firmware de su terminal de sala cuenta con la posibilidad de que el software pueda ser actualizado a través de su web. Sería deseable implementar un bootloader que permita actualizar el software a través de Bluetooth, tanto de los dispositivos llamadores, como las centrales receptoras Bluetooth desarrolladas en el trabajo.
 
