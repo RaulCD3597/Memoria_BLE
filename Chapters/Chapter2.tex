@@ -95,13 +95,13 @@ Los requerimientos del nuevo sistema de llamado a enfermera son:
 
 \begin{enumerate}
 
-\item Al pulsar uno de los botones del dispositivo llamador, la terminal de sala deberá iniciar una llamada con una terminal de enfermería.
+\item Al pulsar uno de los botones del dispositivo llamador, el terminal de sala deberá iniciar una llamada con un terminal de enfermería.
 
-\item Una vez que la terminal de enfermería conteste a la llamada de la terminal de sala, o cuando la terminal de enfermería realice una solicitud de iniciar una llamada, la terminal de sala indicará al dispositivo llamador, que corresponda, encender su micrófono e iniciar el envío de la señal de audio.
+\item Una vez que el terminal de enfermería conteste a la llamada del terminal de sala, o cuando el terminal de enfermería realice una solicitud de iniciar una llamada, el terminal de sala indicará al dispositivo llamador, que corresponda, encender su micrófono e iniciar el envío de la señal de audio.
 
-\item Cada dispositivo llamador debe poder identificarse con un ID único de manera que pueda ser registrado en una terminal de sala.
+\item Cada dispositivo llamador debe poder identificarse con un ID único de manera que pueda ser registrado en un terminal de sala.
 
-\item La terminal de sala deberá registrar los IDs de los llamadores correspondientes a las camas que tenga en el cuarto, y no deberá aceptar conexiones de otros llamadores.
+\item El terminal de sala deberá registrar los IDs de los llamadores correspondientes a las camas que tenga en el cuarto, y no deberá aceptar conexiones de otros llamadores.
 
 \item La transmisión de audio debe realizarse por Bluetooth LE.
 
@@ -109,29 +109,29 @@ Los requerimientos del nuevo sistema de llamado a enfermera son:
 
 \item El dispositivo llamador debe permanecer en modo de bajo consumo mientras no esté en una llamada, o el paciente presione un botón.
 
-\item La terminal de sala además de sus tareas habituales debe estar a la escucha de los mensajes de los dispositivos llamadores que tenga registrados.
+\item El terminal de sala además de sus tareas habituales debe estar a la escucha de los mensajes de los dispositivos llamadores que tenga registrados.
 
-\item Al requerimiento de la terminal de enfermería, la terminal de sala debe poder determinar a qué dispositivo llamador dirigir la solicitud.
+\item Al requerimiento del terminal de enfermería, el terminal de sala debe poder determinar a qué dispositivo llamador dirigir la solicitud.
 
 \item El software debe permitir modificar sus parámetros operativos y almacenarlos en memoria segura.
 
 \item El software no debe alterar las condiciones de operación actuales  del sistema.
 
-\item Se deberá diseñar dos placas eléctricas, una para el módulo de expansión a conectarse a la terminal de sala, y otra para el dispositivo llamador.
+\item Se deberá diseñar dos placas eléctricas, una para el módulo de expansión a conectarse a al terminal de sala, y otra para el dispositivo llamador.
 
 \end{enumerate}
 
-Los requerimientos del  modulo de expansión para la terminal son:
+Los requerimientos del  modulo de expansión para el terminal son:
 
 \begin{enumerate}
 
 \item Conectar de 1 a 3 dispositivos llamadores.
 
-\item Notificar a la terminal de sala las solicitudes del paciente para que inicie una llamada con la terminal de enfermería.
+\item Notificar al terminal de sala las solicitudes del paciente para que inicie una llamada con la terminal de enfermería.
 
-\item Notificar a la terminal de sala cuando un dispositivo llamador se encuentre con baja batería.
+\item Notificar al terminal de sala cuando un dispositivo llamador se encuentre con baja batería.
 
-\item Al estar en llamada, el módulo de expansión deberá ignorar las peticiones de otros llamadores y solo retransmitir la señal de audio a la terminal de sala.
+\item Al estar en llamada, el módulo de expansión deberá ignorar las peticiones de otros llamadores y solo retransmitir la señal de audio al terminal de sala.
 
 \end{enumerate}
 
@@ -141,9 +141,9 @@ Los requerimientos del dispositivo llamador son:
 
 \item Medir el nivel de batería del dispositivo y notificar al módulo de expansión de la terminal de sala al que se encuentre conectado.
 
-\item Notificar a la terminal de sala sobre las solicitudes del paciente según el botón presionado.
+\item Notificar al terminal de sala sobre las solicitudes del paciente según el botón presionado.
 
-\item Leer señal de audio y transmitirla a la terminal de sala cuando se encuentre en llamada.
+\item Leer señal de audio y transmitirla al terminal de sala cuando se encuentre en llamada.
 
 \end{enumerate}
 

@@ -14,7 +14,7 @@ En este capítulo se describe el diseño e implementación de los diferentes mó
 
 El sistema propuesto reemplazará al sistema actual de SURIX, el mismo que es un llamador cableado que se conecta en uno de los puertos de accesorio que tiene el terminal de sala, y donde tanto el micrófono como el parlante se encuentran ubicados en dicho terminal.
 
-El nuevo sistema cambia la ubicación del micrófono al dispositivo llamador, de manera que ahora está más cerca del paciente. De esta forma se mantiene el parlante en la terminal de sala, lo que permite una mejora en la comunicación.
+El nuevo sistema cambia la ubicación del micrófono al dispositivo llamador, de manera que ahora está más cerca del paciente. De esta forma se mantiene el parlante en el terminal de sala, lo que permite una mejora en la comunicación.
 
 El micrófono seleccionado utiliza la interfaz de audio digital PDM \cite{PDM}, que es compatible con el procesador elegido, el cual dispone de un periférico para controlar micrófonos con este tipo de interfaz.
 
@@ -101,9 +101,9 @@ Con estos componentes se diseñó un diagrama esquemático, que se muestra en la
 	\label{fig:pcb}
 \end{figure}
 
-Por motivo de la pandemia de COVID-19 la fabricación de esta placa no pudo ser llevada a cabo en tiempo y forma y por lo tanto no es posible mostrar una representación física de la misma.
+Por motivo de la pandemia de COVID-19 la fabricación de esta placa no pudo ser llevada a cabo en tiempo y forma. Por lo tanto no es posible mostrar una representación física de la misma.
 
-Para que el circuito pueda ser utilizado tanto en el llamador como del lado de la terminal de llamada se ha previsto que el circuito pueda ser alimentado, por la terminal de sala de SURIX en el caso de la terminal de llamada, o por 2 baterías tipo AAA en el dispositivo llamado. Estas últimas se escogieron debido principalmente a la facilidad de adquirirlas en el mercado y su relativo bajo costo.
+Para que el circuito pueda ser utilizado tanto en el llamador como del lado de la terminal de llamada se ha previsto que el circuito pueda ser alimentado, por el terminal de sala de SURIX en el caso del terminal de llamada, o por 2 baterías tipo AAA en el dispositivo llamador. Estas últimas se escogieron debido principalmente a la facilidad de adquirirlas en el mercado y su relativo bajo costo.
 
 La placa del dispositivo llamador se aloja dentro de un gabinete plástico, el cual se muestra en la figura \ref{fig:gabinete}. Sin embargo, se prevee que este se modifique según las necesidades de SURIX.
 
@@ -198,7 +198,7 @@ Este dispositivo es el encargado de recibir datos de todos los dispositivos llam
 
 Al inicializar este dispositivo, se debe configurar el rol antes mencionado. Sin embargo, no empezará a escanear hasta que reciba todos los identificadores de los llamadores a los que aceptará una conexión.
 
-Para recibir estos datos, el dispositivo iniciará la UART presente en el microcontrolador, y esperará a recibir, desde la terminal de sala, las tramas con los identificadores de todos los dispositivos llamadores que tenga asignados para cada cama, los cuales irá guardando en la RAM, en la posición que corresponda según el número de cama recibido, hasta recibir una trama final que le indica que debe empezar a buscar los dispositivos llamadores que tiene registrados. 
+Para recibir estos datos, el dispositivo iniciará la UART presente en el microcontrolador, y esperará a recibir, desde el terminal de sala, las tramas con los identificadores de todos los dispositivos llamadores que tenga asignados para cada cama, los cuales irá guardando en la RAM, en la posición que corresponda según el número de cama recibido, hasta recibir una trama final que le indica que debe empezar a buscar los dispositivos llamadores que tiene registrados. 
 
 Este proceso de búsqueda se mantiene activo hasta que la central logra conectar a todos los dispositivos que tiene asignados. Para descartar los dispositivos no registrados, este proceso lee el identificador que le comparte el dispositivo llamador, verifica que coincida con uno de los identificadores que tiene registrados, y que esté presente el servicio de audio implementado, que también tiene un identificador único. Todo dispositivo que no cumpla con estas dos condiciones será rechazado.
 
